@@ -22,6 +22,10 @@ import Login from "../CardPages/Login";
 import Dashboard from "../Dashboard/Dashboard";
 import Portfolio from "../Poetfolio/Poetfolio";
 import TwoCards from "../TwoCards/TwoCards";
+import DashboardTwo from "../DashboardTwo/DashboardTwo";
+import TwoCardOption from "../TwoCardFourOption/TwoCardFourOption";
+import TwoCardTwoOption from "../TwoCardTwoOption/TwoCardTwoOption";
+import TwoCardDesOption from "../TwoCardDesOption/TwoCardDesOption";
 
 
 
@@ -115,7 +119,12 @@ const Header = (props) => {
             {/* <Login /> */}
             {/* <Dashboard /> */}
             {/* <Portfolio /> */}
-            {/* // <TwoCards /> */}
+            {/* <TwoCards /> */}
+            {/* <TwoCardOption /> */}
+            {/* <DashboardTwo /> */}
+            {/* <TwoCardTwoOption /> */}
+            {/* <TwoCardDesOption /> */}
+
 
         </>
     );

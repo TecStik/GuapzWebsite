@@ -6,7 +6,7 @@ import {
 import { HamburgerIcon, ArrowRightIcon, AddIcon, WarningIcon } from "@chakra-ui/icons";
 
 
-export default function TwoCards() {
+export default function TwoCardTwoOption() {
     return (
 
         <Container maxW="container" p='10' width="" rounded='lg'>
@@ -18,20 +18,57 @@ export default function TwoCards() {
                 backgroundColor='#A7B3C2'
             >
 
-                <Wrap spacing='30px' align='center' justify='center'>
+                <Wrap spacing='30px'
+                    align='center' justify='center'
+                >
                     <WrapItem>
                         <Card
                             backgroundColor="white"
                             height={80}
                             borderRadius={20}
                             boxShadow='xl'
-                        // width={400}
+                            width={290}
                         >
                             <CardHeader >
-                                <Heading borderTopRadius={20} p={2} backgroundColor="#084877" height={20} color='white' textAlign="center" fontSize={25} fontWeight="bold">What is your target amount</Heading>
+                                <Heading
+                                    borderTopRadius={20} p={2}
+
+                                    backgroundColor="#084877" height={20}
+                                    color='white' textAlign="center" fontSize={25}
+                                    fontWeight="bold">Contribution</Heading>
                             </CardHeader>
-                            <CardBody >
-                                {/* <Text>View a summary of all your customers over the last month.</Text> */}
+                            <CardBody
+                                alignItems="center"
+                                justifyContent="center">
+
+                                <VStack height={20}
+                                    // bgColor="blue.100"
+                                    display={{ sm: 'flex' }}
+                                    flex={1}
+                                    alignItems="center"
+                                    justifyContent="center"
+                                    m={14}
+                                    // p={14}
+                                >
+                                    <Input
+                                        placeholder='Initial'
+                                        rounded="4"
+                                        boxShadow='outline'
+                                        m="3%"
+                                        p="3%"
+                                        // height={8}
+                                    />
+                                    <Input
+                                        placeholder='Recurring'
+                                        size='sm'
+                                        rounded="4"
+                                        boxShadow='outline'
+                                        m="3%"
+                                        p="3%"
+                                        // height={8}
+
+                                    />
+                                </VStack>
                             </CardBody>
                             <CardFooter>
                                 {/* <Button backgroundColor="blue.100">View here</Button> */}

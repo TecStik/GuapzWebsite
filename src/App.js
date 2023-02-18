@@ -9,7 +9,16 @@ import SignIn from "./Component/CardPages/SignIn";
 import Dashboard from "./Component/Dashboard/Dashboard";
 import Portfolio from "./Component/Poetfolio/Poetfolio";
 import TwoCards from "./Component/TwoCards/TwoCards";
+import DashboardTwo from "./Component/DashboardTwo/DashboardTwo";
+import TwoCardDesOption from "./Component/TwoCardDesOption/TwoCardDesOption";
+import TwoCardTwoOption from "./Component/TwoCardTwoOption/TwoCardTwoOption";
+import TwoCardOption from "./Component/TwoCardFourOption/TwoCardFourOption";
 
+// import TwoCards from "../TwoCards/TwoCards";
+// import DashboardTwo from "../DashboardTwo/DashboardTwo";
+// import TwoCardOption from "../TwoCardFourOption/TwoCardFourOption";
+// import TwoCardTwoOption from "../TwoCardTwoOption/TwoCardTwoOption";
+// import TwoCardDesOption from "../TwoCardDesOption/TwoCardDesOption";
 const { Button } = chakraTheme.components;
 
 const theme = extendBaseTheme({
@@ -41,6 +50,10 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/twoCards" element={<TwoCards />} />
+          <Route path="/DashboardTwo" element={<DashboardTwo />} />
+          <Route path="/TwoCardDesOption" element={<TwoCardDesOption />} />
+          <Route path="/TwoCardTwoOption" element={<TwoCardTwoOption />} />
+          <Route path="/TwoCardOption" element={<TwoCardOption />} />
         </Routes>
       </BrowserRouter>
       {/* <Header /> */}
