@@ -28,7 +28,7 @@ export default function TwoCards() {
                         // width={400}
                         >
                             <CardHeader >
-                                <Heading borderTopRadius={20} p={2} backgroundColor="#084877" height={20} color='white' textAlign="center" fontSize={25} fontWeight="bold">What is your target amount</Heading>
+                                <Heading borderTopRadius={20} p={2} backgroundColor="#084877" height={20} color='white' textAlign="center" fontSize={25} fontWeight="bold">What is your target amount ?</Heading>
                             </CardHeader>
                             <CardBody >
                                 {/* <Text>View a summary of all your customers over the last month.</Text> */}

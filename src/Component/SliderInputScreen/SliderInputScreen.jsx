@@ -1,12 +1,18 @@
 import React from 'react'
 import ChandePass from '../../assets/ChandePass.png'
 import {
-    Box, Stack, Wrap, Grid, Center, WrapItem, SimpleGrid, GridItem, Heading, Flex, Text, View, FormLabel, Input, Button, FormControl, Image, HStack, CardHeader, Card, CardBody, CardFooter, Container, VStack
+    Box, Stack, Wrap, SliderTrack, Center, WrapItem, NumberDecrementStepper, Slider, Heading, Flex, Text, View, NumberInputField, NumberInput,
+    SliderThumb, Input, Button, SliderFilledTrack, NumberIncrementStepper, NumberInputStepper, HStack, CardHeader, Card, CardBody, CardFooter, Container, VStack
 } from "@chakra-ui/react";
 import { HamburgerIcon, ArrowRightIcon, AddIcon, WarningIcon } from "@chakra-ui/icons";
 
 
-export default function TwoCardDesOption() {
+export default function SliderInput() {
+
+
+    const [value, setValue] = React.useState(0)
+    const handleChange = (value) => setValue(value)
+
     return (
 
         <Container maxW="container" p='10' rounded='lg'>
@@ -33,7 +39,7 @@ export default function TwoCardDesOption() {
 
                                     backgroundColor="#084877" height={20}
                                     color='white' textAlign="center" fontSize={25}
-                                    fontWeight="bold"><b>1/5:</b> Which option explains your Health scenario the best?</Heading>
+                                    fontWeight="bold"> Risk Assessment Result</Heading>
                             </CardHeader>
                             <CardBody
                                 alignItems="center"
@@ -48,24 +54,33 @@ export default function TwoCardDesOption() {
                                     m={14}
                                 // p={14}
                                 >
-                                    <Input
-                                        placeholder='Healty with Insurance'
-                                        rounded="4"
-                                        boxShadow='outline'
-                                        m="3%"
-                                        p="3%"
-                                    // height={8}
-                                    />
-                                    <Input
-                                        placeholder=' Healty without Insurance'
-                                        size='sm'
-                                        rounded="4"
-                                        boxShadow='outline'
-                                        m="3%"
-                                        p="3%"
-                                    // height={8}
+                                    <Text textAlign="center" fontSize={25}
+                                        fontWeight="bold">Moderate</Text>
+                                    <NumberInput maxW={52} m="3%"
+                                        p="3%" value={value} rounded="4"
+                                        boxShadow='outline' onChange={handleChange}>
+                                        <NumberInputField />
+                                        <NumberInputStepper>
+                                            <NumberIncrementStepper />
+                                            <NumberDecrementStepper />
+                                        </NumberInputStepper>
+                                    </NumberInput>
+                                    <Text textAlign="center" fontSize={25}
+                                        fontWeight="bold">Out of 10 Can adjust upto 2 notches</Text>
+                                </VStack>
 
-                                    />
+                                <VStack>
+                                    {/* <Slider
+                                        flex='1'
+                                        focusThumbOnChange={false}
+                                        value={value}
+                                        onChange={handleChange}
+                                    >
+                                        <SliderTrack>
+                                            <SliderFilledTrack />
+                                        </SliderTrack>
+                                        <SliderThumb fontSize='sm' boxSize='32px' children={value} />
+                                    </Slider> */}
                                 </VStack>
                             </CardBody>
                             <CardFooter>
@@ -95,7 +110,7 @@ export default function TwoCardDesOption() {
                     </WrapItem> */}
                 </Wrap>
                 <VStack mt={10} >
-                    {/* <Button colorScheme='teal' w={40}> <ArrowRightIcon />  <ArrowRightIcon /></Button> */}
+                    <Button colorScheme='teal' w={40}> <ArrowRightIcon />  <ArrowRightIcon /></Button>
                 </VStack>
             </Box>
         </Container>

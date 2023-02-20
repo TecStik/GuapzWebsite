@@ -25,7 +25,11 @@ import TwoCards from "../TwoCards/TwoCards";
 import DashboardTwo from "../DashboardTwo/DashboardTwo";
 import TwoCardOption from "../TwoCardFourOption/TwoCardFourOption";
 import TwoCardTwoOption from "../TwoCardTwoOption/TwoCardTwoOption";
+import WebFourCards from "../WebFourCards/WebFourCards";
 import TwoCardDesOption from "../TwoCardDesOption/TwoCardDesOption";
+import OneCardDesOption from "../OneCardDesOption/OneCardDesOption";
+import SliderInputScreen from "../SliderInputScreen/SliderInputScreen";
+import CardsComponent from "../CardsComponent/CardsComponent";
 
 
 
@@ -119,11 +123,15 @@ const Header = (props) => {
             {/* <Login /> */}
             {/* <Dashboard /> */}
             {/* <Portfolio /> */}
+            {/* <WebFourCards /> */}
+            {/* <DashboardTwo /> */}
             {/* <TwoCards /> */}
             {/* <TwoCardOption /> */}
-            {/* <DashboardTwo /> */}
             {/* <TwoCardTwoOption /> */}
             {/* <TwoCardDesOption /> */}
+            {/* <OneCardDesOption /> */}
+            {/* <SliderInputScreen /> */}
+            {/* <CardsComponent /> */}
 
 
         </>

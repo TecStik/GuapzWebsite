@@ -6,7 +6,7 @@ import {
 import { HamburgerIcon, ArrowRightIcon, AddIcon, WarningIcon } from "@chakra-ui/icons";
 
 
-export default function TwoCardDesOption() {
+export default function OneCardDesOption() {
     return (
 
         <Container maxW="container" p='10' rounded='lg'>
@@ -33,7 +33,7 @@ export default function TwoCardDesOption() {
 
                                     backgroundColor="#084877" height={20}
                                     color='white' textAlign="center" fontSize={25}
-                                    fontWeight="bold"><b>1/5:</b> Which option explains your Health scenario the best?</Heading>
+                                    fontWeight="bold"><b>1/5:</b> How familiar are you with investing into stock market ?</Heading>
                             </CardHeader>
                             <CardBody
                                 alignItems="center"
@@ -49,7 +49,7 @@ export default function TwoCardDesOption() {
                                 // p={14}
                                 >
                                     <Input
-                                        placeholder='Healty with Insurance'
+                                        placeholder=''
                                         rounded="4"
                                         boxShadow='outline'
                                         m="3%"
@@ -57,7 +57,7 @@ export default function TwoCardDesOption() {
                                     // height={8}
                                     />
                                     <Input
-                                        placeholder=' Healty without Insurance'
+                                        placeholder=''
                                         size='sm'
                                         rounded="4"
                                         boxShadow='outline'
