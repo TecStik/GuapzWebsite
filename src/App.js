@@ -17,7 +17,11 @@ import TwoCardDesOption from "./Component/TwoCardDesOption/TwoCardDesOption";
 import OneCardDesOption from "./Component/OneCardDesOption/OneCardDesOption";
 import SliderInputScreen from "./Component/SliderInputScreen/SliderInputScreen";
 import CardsComponent from "./Component/CardsComponent/CardsComponent";
+import StepComponent from "./Component/StepComponent/StepComponent";
+import InvestmentPlant from "./Component/InvestmentPlant/InvestmentPlant";
 
+
+import { StepsTheme as Steps } from 'chakra-ui-steps';
 // import TwoCards from "../TwoCards/TwoCards";
 // import DashboardTwo from "../DashboardTwo/DashboardTwo";
 // import TwoCardOption from "../TwoCardFourOption/TwoCardFourOption";
@@ -28,6 +32,7 @@ const { Button } = chakraTheme.components;
 const theme = extendBaseTheme({
   components: {
     Button,
+    Steps,
   },
 });
 // import { extendTheme } from '@chakra-ui/react'
@@ -48,8 +53,9 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<SignIn />} />
-          <Route path="/login" element={<Login />} />
+          {/* <Route path="/" element={<SignIn />} /> */}
+          <Route path="/" element={<InvestmentPlant />} />
+          {/* <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/WebFourCards" element={<WebFourCards />} />
@@ -60,7 +66,7 @@ function App() {
           <Route path="/TwoCardDesOption" element={<TwoCardDesOption />} />
           <Route path="/OneCardDesOption" element={<OneCardDesOption />} />
           <Route path="/SliderInputScreen" element={<SliderInputScreen />} />
-          <Route path="/CardsComponent" element={<CardsComponent />} />
+          <Route path="/CardsComponent" element={<CardsComponent />} /> */}
         </Routes>
       </BrowserRouter>
       {/* <Header /> */}

@@ -1,0 +1,89 @@
+import React from 'react'
+import ChandePass from '../../assets/ChandePass.png'
+import {
+    Box, TableContainer, Wrap, TableCaption, Tbody, WrapItem, Td, Th, Tr, Heading, Tfoot, Thead, Table,
+    FormLabel, Input, Button, FormControl, Image, HStack, CardHeader, Card, CardBody, CardFooter, Container, VStack
+} from "@chakra-ui/react";
+import { HamburgerIcon, ArrowRightIcon, AddIcon, WarningIcon } from "@chakra-ui/icons";
+
+
+export default function InvestmentPlant() {
+    return (
+
+        <Container maxW="container" p='10' width="" rounded='lg'>
+            <Box
+                boxShadow="2xl"
+                minHeight="70vh"
+                rounded="md"
+                paddingTop='10%'
+                backgroundColor='#A7B3C2'
+            >
+
+                <Wrap spacing='30px'
+                    align='center' justify='center'
+                >
+                    <WrapItem>
+                        <Card
+                            backgroundColor="white"
+                            height={80}
+                            borderRadius={20}
+                            boxShadow='xl'
+                            width={290}
+                        >
+                            <CardHeader >
+                                <Heading
+                                    borderTopRadius={20} p={2}
+
+                                    backgroundColor="#084877" height={20}
+                                    color='white' textAlign="center" fontSize={25}
+                                    fontWeight="bold">Contribution</Heading>
+                            </CardHeader>
+                            <CardBody
+                                alignItems="center"
+                                justifyContent="center">
+
+                                {/* <VStack height={20}
+                                    // bgColor="blue.100"
+                                    // display={{ sm: 'flex' }}
+                                    // flex={1}
+                                    // alignItems="center"
+                                    // justifyContent="center"
+                                    // m={14}
+                                // p={14}
+                                >
+                  
+                                </VStack> */}
+                            </CardBody>
+                            <CardFooter>
+                                {/* <Button backgroundColor="blue.100">View here</Button> */}
+                            </CardFooter>
+                        </Card>
+                    </WrapItem>
+                    <WrapItem>
+                        <Card
+                            // backgroundColor="gray.100"
+                            height={60}
+                            // borderRadius={20}
+                            boxShadow='xl'
+                            h='170px'
+                            p={2}
+                        >
+                            {/* <CardHeader >
+                                <Heading borderTopRadius={20} size='md' backgroundColor="#084877" height={20} color='white' textAlign="center" fontSize={25} fontWeight="bold">Goals Base Tnvestment</Heading>
+                            </CardHeader> */}
+                            <CardBody  >
+                                <Image src={ChandePass} w='190px' h='170px' />
+                            </CardBody>
+                            {/* <CardFooter>
+                                <Button backgroundColor="blue.100">View here</Button>
+                            </CardFooter> */}
+                        </Card>
+                    </WrapItem>
+                </Wrap>
+                <VStack mt={10} >
+                    <Button colorScheme='teal' w={40}> <ArrowRightIcon />  <ArrowRightIcon /></Button>
+                </VStack>
+            </Box>
+        </Container>
+    )
+}
