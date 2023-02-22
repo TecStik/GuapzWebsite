@@ -3,8 +3,8 @@ import { ChakraBaseProvider, extendBaseTheme, Text } from "@chakra-ui/react";
 import chakraTheme from "@chakra-ui/theme";
 import Header from "./Component/Header/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import SignIn from "./Component/CardPages/SignIn";
+
 import Login from "./Component/CardPages/Login";
 import Dashboard from "./Component/Dashboard/Dashboard";
 import Portfolio from "./Component/Poetfolio/Poetfolio";
@@ -54,7 +54,7 @@ function App() {
         <Header />
         <Routes>
           {/* <Route path="/" element={<SignIn />} /> */}
-          <Route path="/" element={<InvestmentPlant />} />
+          {/* <Route path="/" element={<StepComponent />} /> */}
           {/* <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/portfolio" element={<Portfolio />} />

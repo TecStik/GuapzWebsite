@@ -29,6 +29,7 @@ import WebFourCards from "../WebFourCards/WebFourCards";
 import TwoCardDesOption from "../TwoCardDesOption/TwoCardDesOption";
 import OneCardDesOption from "../OneCardDesOption/OneCardDesOption";
 import SliderInputScreen from "../SliderInputScreen/SliderInputScreen";
+import StepComponent from "../StepComponent/StepComponent";
 import CardsComponent from "../CardsComponent/CardsComponent";
 
 
@@ -125,11 +126,12 @@ const Header = (props) => {
             {/* <Portfolio /> */}
             {/* <WebFourCards /> */}
             {/* <DashboardTwo /> */}
-            {/* <TwoCards /> */}
             {/* <TwoCardOption /> */}
             {/* <TwoCardTwoOption /> */}
             {/* <TwoCardDesOption /> */}
             {/* <OneCardDesOption /> */}
+            {/* <TwoCards /> */}
+            <StepComponent />
             {/* <SliderInputScreen /> */}
             {/* <CardsComponent /> */}
 
