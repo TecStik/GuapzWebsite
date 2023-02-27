@@ -31,6 +31,9 @@ import OneCardDesOption from "../OneCardDesOption/OneCardDesOption";
 import SliderInputScreen from "../SliderInputScreen/SliderInputScreen";
 import StepComponent from "../StepComponent/StepComponent";
 import CardsComponent from "../CardsComponent/CardsComponent";
+import QuizComponent from "../QuizComponent/QuizComponent";
+import QuizUI from "../QuizComponent/QuizUI";
+import QuizScreen from "../QuizComponent/QuizScreen";
 
 
 
@@ -131,9 +134,12 @@ const Header = (props) => {
             {/* <TwoCardDesOption /> */}
             {/* <OneCardDesOption /> */}
             {/* <TwoCards /> */}
-            <StepComponent />
+            {/* <StepComponent /> */}
             {/* <SliderInputScreen /> */}
             {/* <CardsComponent /> */}
+            {/* <QuizComponent /> */}
+            <QuizScreen />
+            {/* <QuizUI /> */}
 
 
         </>

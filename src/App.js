@@ -1,4 +1,4 @@
-import { ChakraBaseProvider, extendBaseTheme, Text } from "@chakra-ui/react";
+import { ChakraBaseProvider, extendBaseTheme,RadioButtonGroup, Text } from "@chakra-ui/react";
 // `@chakra-ui/theme` is a part of the base install with `@chakra-ui/react`
 import chakraTheme from "@chakra-ui/theme";
 import Header from "./Component/Header/Header";
@@ -55,6 +55,8 @@ function App() {
         <Routes>
           {/* <Route path="/" element={<SignIn />} /> */}
           {/* <Route path="/" element={<StepComponent />} /> */}
+          {/* <Route path="/" element={<InvestmentPlant />} /> */}
+          
           {/* <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/portfolio" element={<Portfolio />} />

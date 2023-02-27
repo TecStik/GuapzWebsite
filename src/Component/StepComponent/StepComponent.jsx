@@ -4,6 +4,8 @@ import { Heading, Box, Text, Flex, Button, HStack, useRadio, useRadioGroup, Tab,
 import { ArrowRightIcon } from "@chakra-ui/icons";
 import Pngwing from '../../assets/Pngwing.png';
 import pen from '../../assets/pen.png';
+import QuestionList from '../QuizComponent/QuestionList.json';
+
 // import DatePicker from "react-datepicker";
 // import { SingleDatepicker } from "chakra-dayzed-datepicker";
 import { Calendar, DatePicker, theme, Alert } from 'antd';
@@ -24,28 +26,38 @@ function RadioCard(props) {
 
     return (
         <Box as='label'>
-            <input {...input} />
-
-            <Box
-                {...checkbox}
-                cursor='pointer'
-                borderWidth='1px'
-                borderRadius='md'
-                boxShadow='md'
-                _checked={{
-                    bg: 'teal.600',
-                    color: 'white',
-                    borderColor: 'teal.600',
-                }}
-                _focus={{
-                    boxShadow: 'outline',
-                }}
-                px={5}
-                py={3}
-            // width="140%"
+            <VStack height={20}
+                // bgColor="blue.100"
+                display={{ sm: 'flex' }}
+                flex={1}
+                alignItems="center"
+                justifyContent="center"
+                mt={3}
             >
-                {props.children}
-            </Box>
+                <input {...input} />
+
+                <Box
+                    {...checkbox}
+                    cursor='pointer'
+                    borderWidth='1px'
+                    borderRadius='md'
+                    boxShadow='md'
+                    _checked={{
+                        bg: 'teal.600',
+                        color: 'white',
+                        borderColor: 'teal.600',
+                    }}
+                    _focus={{
+                        boxShadow: 'outline',
+                    }}
+                    px={5}
+                    display="flex"
+                    py={3}
+                // width="140%"
+                >
+                    {props.children}
+                </Box>
+            </VStack>
         </Box>
     )
 }
@@ -257,7 +269,7 @@ export const CardsComponent = () => {
                                             alignItems="center"
                                             justifyContent="center">
 
-                                            <HStack {...group}>
+                                            <VStack {...group}>
                                                 <Wrap
                                                     // bgColor="blue.100"
                                                     display={{ sm: 'flex' }}
@@ -266,8 +278,9 @@ export const CardsComponent = () => {
                                                     justifyContent="center"
                                                     mt={12}
                                                 >
-                                                    {options.map((value) => {
-                                                        const radio = getRadioProps({ value })
+                                                    {QuestionList.map((value,i) => {
+                                                        // const radio = getRadioProps({ value })
+                                                        console.log(value.Options);
                                                         return (
                                                             <WrapItem
                                                                 // bgColor="blue.100"
@@ -276,12 +289,12 @@ export const CardsComponent = () => {
                                                                 alignItems="center"
                                                                 justifyContent="center"
                                                             >
-                                                                <RadioCard key={value} {...radio}>{value}</RadioCard>
+                                                                {/* <RadioCard key={value} {...radio}>{value}</RadioCard> */}
                                                             </WrapItem>
                                                         )
                                                     })}
                                                 </Wrap>
-                                            </HStack>
+                                            </VStack>
                                         </CardBody>
                                         <VStack m={12} align='center' justify='center'>
                                             <Button colorScheme='teal' w={40} onClick={nextStep}> <ArrowRightIcon />  <ArrowRightIcon /></Button>
