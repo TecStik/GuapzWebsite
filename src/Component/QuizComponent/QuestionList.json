@@ -1,95 +1,187 @@
 [
   {
-    "_id": "6323219da59ad5a271ebce38",
-    "QId": "Q1",
-    "Indicator": "age",
-    "Description": "Please select your age bracket",
-    "Options": [
-      {
-        "QuizValue": "1",
-        "Quizlable": "<25",
-        "QuizOptionKey": 3188
-      },
-      {
-        "QuizValue": "2",
-        "Quizlable": "<30",
-        "QuizOptionKey": 2021
-      }
-    ],
-    "Weightage": "50",
-    "createdOn": "2022-09-15T12:59:09.873Z",
-    "__v": 0
+  "_id": "6323219da59ad5a271ebce38",
+  "QId": "Q1",
+  "Indicator": "age",
+  "Description": "Please select your age bracket",
+  "Options": [
+  {
+  "QuizValue": "1",
+  "Quizlable": "<25",
+  "QuizOptionKey": 3188
   },
   {
-    "_id": "6349712b22fb16c7b85f049b",
-    "QId": "Q2",
-    "Indicator": "Health",
-    "Description": "Which explains your Health Scenario the best",
-    "Options": [
-      {
-        "QuizValue": "1",
-        "Quizlable": "Healthy with Insurance",
-        "QuizOptionKey": 4466
-      },
-      {
-        "QuizValue": "2",
-        "Quizlable": "healthy w/o Insurance",
-        "QuizOptionKey": 7455
-      },
-      {
-        "QuizValue": "3",
-        "Quizlable": "Chronic Disease",
-        "QuizOptionKey": 8081
-      },
-      {
-        "QuizValue": "4",
-        "Quizlable": "Mental Iealth Issues",
-        "QuizOptionKey": 5235
-      },
-      {
-        "QuizValue": "5",
-        "Quizlable": "Disability",
-        "QuizOptionKey": 6466
-      },
-      {
-        "QuizValue": "6",
-        "Quizlable": "Fatal Disease",
-        "QuizOptionKey": 8242
-      }
-    ],
-    "Weightage": "30",
-    "createdOn": "2022-10-14T14:24:43.664Z",
-    "__v": 0
+  "QuizValue": "2",
+  "Quizlable": "<30",
+  "QuizOptionKey": 2021
+  },
+  {
+    "QuizValue": "3",
+    "Quizlable": "30-40",
+    "QuizOptionKey": 2021
+    }
+  ],
+  "Weightage": "50",
+  "createdOn": "2022-09-15T12:59:09.873Z",
+  "__v": 0
+  },
+  {
+  "_id": "6349712b22fb16c7b85f049b",
+  "QId": "Q2",
+  "Indicator": "Health",
+  "Description": "Which explains your Health Scenario the best",
+  "Options": [
+  {
+  "QuizValue": "1",
+  "Quizlable": "Healthy with Insurance",
+  "QuizOptionKey": 4466
+  },
+  {
+  "QuizValue": "2",
+  "Quizlable": "healthy w/o Insurance",
+  "QuizOptionKey": 7455
+  },
+  {
+  "QuizValue": "3",
+  "Quizlable": "Chronic Disease",
+  "QuizOptionKey": 8081
+  },
+  {
+  "QuizValue": "4",
+  "Quizlable": "Mental Iealth Issues",
+  "QuizOptionKey": 5235
+  },
+  {
+  "QuizValue": "5",
+  "Quizlable": "Disability",
+  "QuizOptionKey": 6466
+  },
+  {
+  "QuizValue": "6",
+  "Quizlable": "Fatal Disease",
+  "QuizOptionKey": 8242
+  }
+  ],
+  "Weightage": "30",
+  "createdOn": "2022-10-14T14:24:43.664Z",
+  "__v": 0
+  },
+  {
+  "_id": "634982abc12688495a93f81e",
+  "QId": "oqeq",
+  "Indicator": "dependents",
+  "Description": "how many dependents do you have",
+  "Options": [
+  {
+  "QuizValue": "1",
+  "Quizlable": "0",
+  "QuizOptionKey": 7197
+  },
+  {
+  "QuizValue": "2",
+  "Quizlable": "<2",
+  "QuizOptionKey": 5831
+  },
+  {
+  "QuizValue": "3",
+  "Quizlable": "3",
+  "QuizOptionKey": 8473
+  },
+  {
+  "QuizValue": "4",
+  "Quizlable": "4",
+  "QuizOptionKey": 7860
+  }
+  ],
+  "Weightage": "20",
+  "createdOn": "2022-10-14T15:39:23.664Z",
+  "__v": 0
+  }
+  ,
+  {
+  "_id": "634982abc12688495a93f81e",
+  "QId": "Q4",
+  "Indicator": "Career Stage",
+  "Description": "tell us something about nature of your job",
+  "Options": [
+  {
+  "QuizValue": "1",
+  "Quizlable": "Entrepreneur",
+  "QuizOptionKey": 7197
+  },
+  {
+  "QuizValue": "2",
+  "Quizlable": "Senior Executive",
+  "QuizOptionKey": 5831
+  },
+  {
+  "QuizValue": "3",
+  "Quizlable": "Mid Senior",
+  "QuizOptionKey": 8473
+  },
+  {
+  "QuizValue": "4",
+  "Quizlable": "Managerial",
+  "QuizOptionKey": 7860
+  },
+  {
+    "QuizValue": "5",
+    "Quizlable": "Junior Level",
+    "QuizOptionKey": 7860
+    }
+    ,
+  {
+    "QuizValue": "6",
+
+  "Quizlable": "Unemployed/Retired",
+    "QuizOptionKey": 7860
+    }
+  ],
+  "Weightage": "20",
+  "createdOn": "2022-10-14T15:39:23.664Z",
+  "__v": 0
   },
   {
     "_id": "634982abc12688495a93f81e",
-    "QId": "oqeq",
-    "Indicator": "dependents",
-    "Description": "how many dependents do you have",
+    "QId": "Q5",
+    "Indicator": "Investment Knowledge",
+    "Description": "How much you are familiar with Stock Market and the Risks associated with Investments in securities",
     "Options": [
-      {
-        "QuizValue": "1",
-        "Quizlable": "0",
-        "QuizOptionKey": 7197
-      },
-      {
-        "QuizValue": "2",
-        "Quizlable": "<2",
-        "QuizOptionKey": 5831
-      },
-      {
-        "QuizValue": "3",
-        "Quizlable": "3",
-        "QuizOptionKey": 8473
-      },
-      {
-        "QuizValue": "4",
-        "Quizlable": "4",
-        "QuizOptionKey": 7860
+    {
+    "QuizValue": "1",
+    "Quizlable": "Expert",
+    "QuizOptionKey": 7197
+    },
+    {
+    "QuizValue": "2",
+    "Quizlable": "Active Investor",
+    "QuizOptionKey": 5831
+    },
+    {
+    "QuizValue": "3",
+    "Quizlable": "good understanding",
+    "QuizOptionKey": 8473
+    },
+    {
+    "QuizValue": "4",
+    "Quizlable": "Interest",
+    "QuizOptionKey": 7860
+    },
+    {
+      "QuizValue": "5",
+      "Quizlable": "Knowledge",
+      "QuizOptionKey": 7860
+      }
+      ,
+    {
+      "QuizValue": "6",
+  
+    "Quizlable": "Novice",
+      "QuizOptionKey": 7860
       }
     ],
     "Weightage": "20",
     "createdOn": "2022-10-14T15:39:23.664Z",
     "__v": 0
-  }
-]
+    }
+  ]
