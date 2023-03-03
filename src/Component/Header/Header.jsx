@@ -34,7 +34,7 @@ import CardsComponent from "../CardsComponent/CardsComponent";
 import QuizComponent from "../QuizComponent/QuizComponent";
 import QuizUI from "../QuizComponent/QuizUI";
 import QuizScreen from "../QuizComponent/QuizScreen";
-
+import ChartDashboard from "../ChartDashboard/ChartDashboard";
 
 
 const Header = (props) => {
@@ -138,8 +138,9 @@ const Header = (props) => {
             {/* <SliderInputScreen /> */}
             {/* <CardsComponent /> */}
             {/* <QuizComponent /> */}
-            <QuizScreen />
+            {/* <QuizScreen /> */}
             {/* <QuizUI /> */}
+            <ChartDashboard />
 
 
         </>
