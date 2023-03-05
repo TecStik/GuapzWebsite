@@ -140,7 +140,7 @@ const Header = (props) => {
             {/* <QuizComponent /> */}
             {/* <QuizScreen /> */}
             {/* <QuizUI /> */}
-            <ChartDashboard />
+            {/* <ChartDashboard /> */}
 
 
         </>

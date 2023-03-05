@@ -54,7 +54,7 @@ function App() {
         <Header />
         <Routes>
           {/* <Route path="/" element={<SignIn />} /> */}
-          {/* <Route path="/" element={<StepComponent />} /> */}
+          <Route path="/" element={<StepComponent />} />
           {/* <Route path="/" element={<InvestmentPlant />} /> */}
           
           {/* <Route path="/login" element={<Login />} />
