@@ -1,73 +1,29 @@
 import React, { useState } from "react";
-import { Step, Steps, useSteps } from "chakra-ui-steps"
+import { Step, Steps, useSteps, } from "chakra-ui-steps"
 import { Heading, Box, Text, Flex, Button, HStack, useRadio, useRadioGroup, Tab, Tabs, Input, TabList, VStack, Image, Wrap, Card, CardHeader, CardFooter, CardBody, WrapItem, Container, Center, } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@chakra-ui/icons";
-import Pngwing from '../../assets/Pngwing.png';
-import pen from '../../assets/pen.png';
 import QuestionList from '../QuizComponent/QuestionList.json';
-
-// import DatePicker from "react-datepicker";
-// import { SingleDatepicker } from "chakra-dayzed-datepicker";
+import StartInvestment from "../../assets/StartInvestment.png"
+import PortflioPosi from '../../assets/PortflioPosi.png'
+import ChandePass from '../../assets/ChandePass.png'
+import UpdateCRP from '../../assets/UpdateCRP.png'
+import Pngwing from '../../assets/Pngwing.png';
+import Wallet from '../../assets/Wallet.png'
+import pen from '../../assets/pen.png';
+import PC from '../../assets/PC.png'
 import { Calendar, DatePicker, theme, Alert } from 'antd';
-import dayjs from 'dayjs'
+import { ClickableSteps } from "./StepTwo/StepTwo";
 import moment from "moment";
+import dayjs from 'dayjs'
 
-const steps = [{ label: "Step 1" }, { label: "Step 2" }, { label: "Step 3" }]
-
-const onPanelChange = (value, mode) => {
-    console.log(value.format('YYYY-MM-DD'), mode);
-};
-
-
-function RadioCard(props) {
-    const { getInputProps, getCheckboxProps } = useRadio(props)
-    const input = getInputProps()
-    const checkbox = getCheckboxProps()
-
-    return (
-        <Box as='label'>
-            <VStack height={20}
-                // bgColor="blue.100"
-                display={{ sm: 'flex' }}
-                flex={1}
-                alignItems="center"
-                justifyContent="center"
-                mt={3}
-            >
-                <input {...input} />
-
-                <Box
-                    {...checkbox}
-                    cursor='pointer'
-                    borderWidth='1px'
-                    borderRadius='md'
-                    boxShadow='md'
-                    _checked={{
-                        bg: 'teal.600',
-                        color: 'white',
-                        borderColor: 'teal.600',
-                    }}
-                    _focus={{
-                        boxShadow: 'outline',
-                    }}
-                    px={5}
-                    display="flex"
-                    py={3}
-                // width="140%"
-                >
-                    {props.children}
-                </Box>
-            </VStack>
-        </Box>
-    )
-}
+// const steps = [{ label: "Step 1" }, { label: "Step 2" }, { label: "Step 3" }]
+// const nestedSteps = [{ label: "Step 1" }, { label: "Step 2" }, { label: "Step 3" }]
 
 export const CardsComponent = () => {
 
-    const { nextStep, prevStep, reset, activeStep } = useSteps({ initialStep: 0, })
+    const { nextStep, prevStep, reset, activeStep, setStep } = useSteps({ initialStep: 0, })
     const { token } = theme.useToken();
 
-    const options = ['Monthly', 'Quarterly', 'SemiAnnual', 'Anual']
 
     const { getRootProps, getRadioProps } = useRadioGroup({
         name: 'framework',
@@ -85,9 +41,9 @@ export const CardsComponent = () => {
     let today = moment();
     let months = moment("2019-12-26");
     let totalMonths = today.diff(months, "month");
-    console.log(startDate);
-    console.log(totalMonths, "totalMonths");
-    console.log(moment(value).format('MMMM Do YYYY'), "raza");
+    // console.log(startDate);
+    // console.log(totalMonths, "totalMonths");
+    // console.log(moment(value).format('MMMM Do YYYY'), "raza");
 
 
     const onSelect = (newValue) => {
@@ -102,133 +58,89 @@ export const CardsComponent = () => {
         border: `1px solid ${token.colorBorderSecondary}`,
         borderRadius: token.borderRadiusLG,
     };
+
+
     return (
-        <Flex flexDir="column" width="100%">
-            <Steps activeStep={activeStep}>
+        <Flex flexDir="column" width="100%" >
+            <Steps onClickStep={(step) => setStep(step)} rounded="md" activeStep={activeStep}>
                 {/* <Step key={1}> Step 1</Step> */}
                 <Step label={"User Login"} key={1}>
-                    <Container maxW="container"
-                        p='2'
-                        rounded='lg'>
+                    <Container p='10' width="" rounded='lg'>
                         <Box
                             boxShadow="2xl"
+                            width="100%"
+                            minHeight="70vh"
                             rounded="md"
-                            padding='5%'
-                            backgroundColor='#A7B3C2'
+                            bgGradient={[
+                                'linear(to-tr, teal.300, #FFFFFF)',
+                                'linear(to-t, #316489, teal.500)',
+                                'linear(to-b, #316489, #316489',
+                            ]}
+                            color='white'
                         >
-                            <Wrap spacing='30px'
-                                align='center' justify='center'
-                            >
-                                <WrapItem>
-                                    <Card
-                                        backgroundColor="white"
-                                        height={80}
-                                        borderRadius={20}
-                                        boxShadow='xl'
-                                    >
-                                        <CardHeader>
-                                            <Heading
-                                                borderTopRadius={20} p={2}
-                                                backgroundColor="#DBDCDE"
-                                                color='gray' textAlign="center" fontSize={25}
-                                                fontWeight="bold">
-                                                <HStack>
-                                                    <Image src={pen} w='110px' h='80px' />
-                                                    <Text> What is you target amount? </Text>
-                                                </HStack>
-                                            </Heading>
-                                        </CardHeader>
-                                        <CardBody
-                                            alignItems="center"
-                                            justifyContent="center">
 
-                                            <VStack
-                                                //  height={20}
-                                                // bgColor="blue.100"
-                                                // display={{ sm: 'flex' }}
-                                                // flex={1}
-                                                alignItems="center"
-                                                justifyContent="center"
-                                                mt={10}
-                                            // p={14}
-                                            >
-                                                <Input
-                                                    placeholder=''
-                                                    rounded="4"
-                                                    boxShadow='outline'
-                                                    m="3%"
-                                                    p="3%"
-                                                // height={8}
-                                                />
-                                            </VStack>
 
-                                            <VStack>
-
-                                            </VStack>
-                                        </CardBody>
-                                        <VStack m={2} align='center' justify='center'>
-                                            <Button colorScheme='teal' w={40} onClick={nextStep}> <ArrowRightIcon />  <ArrowRightIcon /></Button>
+                            <Wrap spacing='30px' align='center' justify='center' p={10} >
+                                <WrapItem >
+                                    <Center boxShadow="2xl" onClick={nextStep} w='310px' h='180px'>
+                                        <VStack >
+                                            <Image src={StartInvestment} w='150px' h='150px' />
+                                            <Text color='white'>Laptop/Pc</Text>
                                         </VStack>
-                                        {/* <CardFooter>
-                                        </CardFooter> */}
-                                    </Card>
+                                    </Center>
                                 </WrapItem>
-                                <Image src={Pngwing} w='180px' h='200px' />
+                                <WrapItem>
+                                    <Center rounded="md" boxShadow="2xl" onClick={nextStep} w='310px' h='180px'>
+                                        <VStack>
+                                            <Image src={UpdateCRP} w='190px' h='150px' />
+                                            <Text color='white'>Mobile/Gadgets</Text>
+                                        </VStack>
+                                    </Center>
+                                </WrapItem>
+                                <WrapItem >
+                                    <Center boxShadow="2xl" onClick={nextStep} w='310px' h='180px'>
+                                        <VStack>
+                                            <Image src={UpdateCRP} w='190px' h='150px' />
+                                            <Text color='white'>Apparel</Text>
+                                        </VStack>
+                                    </Center>
+                                </WrapItem>
                             </Wrap>
-                        </Box>
-                    </Container>
+
+                            <Wrap spacing='30px' align='center' justify='center' >
+                                <WrapItem>
+                                    <Center boxShadow="2xl" onClick={nextStep} w='310px' h='180px'>
+                                        <VStack>
+                                            <Image src={PC} w='130px' h='120px' />
+                                            <Text color='white'>Custom </Text>
+                                        </VStack>
+                                    </Center>
+                                </WrapItem>
+                                <WrapItem>
+                                    <Center rounded="md" boxShadow="2xl" onClick={nextStep} w='310px' h='180px' >
+                                        <VStack>
+                                            <Image src={Wallet} w='130px' h='120px' />
+                                            <Text color='white'>Education</Text>
+                                        </VStack>
+                                    </Center>
+                                </WrapItem>
+                                <WrapItem >
+                                    <Center boxShadow="2xl" w='310px' h='180px'>
+                                        <VStack>
+                                            <Image src={ChandePass} w='130px' h='120px' />
+                                            <Text color='white'> Vocation</Text>
+                                        </VStack>
+                                    </Center>
+                                </WrapItem>
+                            </Wrap>
+                        </Box >
+                    </Container >
                 </Step>
 
                 {/* <Step key={2}> Step 2</Step> */}
                 <Step label={"Interests"} key={2}>
-                    <Container maxW="container"
-                        p='2'
-                        rounded='lg'>
-                        <Box
-                            boxShadow="2xl"
-                            rounded="md"
-                            padding='5%'
-                            backgroundColor='#A7B3C2'
-                        >
-                            <Wrap spacing='30px'
-                                align='center' justify='center'
-                            >
-                                <WrapItem>
-                                    <Card
-                                        backgroundColor="white"
-                                        borderRadius={20}
-                                        boxShadow='xl'
-                                        height={80}
-                                    >
-                                        <CardHeader>
-                                            <Heading
-                                                borderTopRadius={20} p={2}
-                                                backgroundColor="#DBDCDE"
-                                                color='gray' textAlign="center" fontSize={25}
-                                                fontWeight="bold">
-                                                <HStack>
-                                                    <Image src={pen} w='110px' h='80px' />
-                                                    <Text> What is you Selected amount? </Text>
-                                                </HStack>
-                                            </Heading>
-                                        </CardHeader>
-                                        <CardBody>
-                                            <VStack alignItems="center" justifyContent="center" mt={10}>
-                                                <DatePicker value={value} onSelect={onSelect} onPanelChange={onPanelChange} p="3%" m="3%" />
-                                                <div style={wrapperStyle}>{`Month: ${selectedValue?.format('YYYY-MM-DD')}`}</div>
-                                                {/* <Alert message={`You selected date: ${selectedValue?.format('YYYY-MM-DD')}`} /> */}
-                                            </VStack>
-                                        </CardBody>
-
-                                        <VStack m={2} align='center' justify='center'>
-                                            <Button colorScheme='teal' w={40} onClick={nextStep}> <ArrowRightIcon />  <ArrowRightIcon /></Button>
-                                        </VStack>
-                                    </Card>
-                                </WrapItem>
-                                <Image src={Pngwing} w='180px' h='200px' />
-                            </Wrap>
-
-                        </Box>
+                    <Container maxW="container" p='2' rounded='lg'>
+                        <ClickableSteps props={"data"} />
                     </Container>
                 </Step>
 
@@ -278,7 +190,7 @@ export const CardsComponent = () => {
                                                     justifyContent="center"
                                                     mt={12}
                                                 >
-                                                    {QuestionList.map((value,i) => {
+                                                    {QuestionList.map((value, i) => {
                                                         // const radio = getRadioProps({ value })
                                                         console.log(value.Options);
                                                         return (
@@ -307,7 +219,7 @@ export const CardsComponent = () => {
                     </Container>
                 </Step>
             </Steps>
-
+{/* 
             {activeStep === steps.length ? (
                 <Flex px={4} py={4} width="100%" flexDirection="column">
                     <Heading fontSize="xl" textAlign="center">Woohoo! All steps completed!</Heading>
@@ -321,14 +233,12 @@ export const CardsComponent = () => {
                         onClick={prevStep}
                         size="sm"
                         variant="ghost"
-                    >
-                        Prev
-                    </Button>
+                    > Prev</Button>
                     <Button size="sm" onClick={nextStep}>
                         {activeStep === steps.length - 1 ? "Finish" : "Next"}
                     </Button>
                 </Flex>
-            )}
+            )} */}
         </Flex>
     )
 }
