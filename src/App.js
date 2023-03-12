@@ -1,4 +1,9 @@
-import { ChakraBaseProvider, extendBaseTheme,RadioButtonGroup, Text } from "@chakra-ui/react";
+import {
+  ChakraBaseProvider,
+  extendBaseTheme,
+  RadioButtonGroup,
+  Text,
+} from "@chakra-ui/react";
 // `@chakra-ui/theme` is a part of the base install with `@chakra-ui/react`
 import chakraTheme from "@chakra-ui/theme";
 import Header from "./Component/Header/Header";
@@ -20,8 +25,8 @@ import CardsComponent from "./Component/CardsComponent/CardsComponent";
 import StepComponent from "./Component/StepComponent/StepComponent";
 import InvestmentPlant from "./Component/InvestmentPlant/InvestmentPlant";
 
-
-import { StepsTheme as Steps } from 'chakra-ui-steps';
+import { StepsTheme as Steps } from "chakra-ui-steps";
+import QuizComponent from "./Component/QuizComponent/QuizComponent";
 // import TwoCards from "../TwoCards/TwoCards";
 // import DashboardTwo from "../DashboardTwo/DashboardTwo";
 // import TwoCardOption from "../TwoCardFourOption/TwoCardFourOption";
@@ -54,9 +59,10 @@ function App() {
         <Header />
         <Routes>
           {/* <Route path="/" element={<SignIn />} /> */}
-          <Route path="/" element={<StepComponent />} />
+          {/* <Route path="/" element={<StepComponent />} /> */}
           {/* <Route path="/" element={<InvestmentPlant />} /> */}
-          
+          {/* <Route path="/" element={<QuizComponent />} /> */}
+
           {/* <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/portfolio" element={<Portfolio />} />
