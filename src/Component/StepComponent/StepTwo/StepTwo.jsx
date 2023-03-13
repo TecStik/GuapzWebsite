@@ -100,7 +100,7 @@ export const ClickableSteps = () => {
                                         </HStack>
                                     </CardBody>
                                     <CardFooter>
-                                        <Button backgroundColor="blue.100" onClick={() => NextStepDetail.setNestedStep("moveThirdStep")}>View here</Button>
+                                        <Button backgroundColor="blue.100" onClick={() => NextStepDetail.setNestedStep("moveThirdStep")}>Next Step</Button>
                                     </CardFooter>
                                 </Card>
                             </WrapItem>

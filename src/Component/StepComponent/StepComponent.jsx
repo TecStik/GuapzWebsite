@@ -20,9 +20,12 @@ export const CardsComponent = () => {
     const NextStepDetail = useContext(StoreContext);
 
     useEffect(() => {
-        if (NextStepDetail.NestedStep === "moveIIndStep") {
+        if (NextStepDetail.NestedStep === "moveIIndStep" ) {
             nextStep()
         } else if (NextStepDetail.NestedStep === "moveThirdStep") {
+            nextStep()
+        }
+         else if (NextStepDetail.NestedStep === "moveIIIIndStep") {
             nextStep()
         }
     }, [NextStepDetail])

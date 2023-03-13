@@ -119,7 +119,7 @@ const Header = (props) => {
             {/* <TwoCardDesOption /> */}
             {/* <OneCardDesOption /> */}
             {/* <TwoCards /> */}
-            {/* <StepComponent /> */}
+            <StepComponent />
             {/* <SliderInputScreen /> */}
             {/* <CardsComponent /> */}
 

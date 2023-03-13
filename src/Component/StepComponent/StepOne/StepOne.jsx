@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Heading, Box, Text, VStack, Image, Wrap, WrapItem, Container, Center, } from "@chakra-ui/react";
-import StartInvestment from "../../../assets/StartInvestment.png";
-import ChandePass from '../../../assets/ChandePass.png';
+import laptopIcon from "../../../assets/laptop-icon.png";
+import travelIcon from '../../../assets/travel-icon.png';
 import { Step, Steps, useSteps, } from "chakra-ui-steps"
-import UpdateCRP from '../../../assets/UpdateCRP.png';
-import Wallet from '../../../assets/Wallet.png';
-import PC from '../../../assets/PC.png';
+import devices from '../../../assets/devices.png';
+import purse from '../../../assets/purse.png';
+import graduated from '../../../assets/graduated.png';
+import customization from '../../../assets/customization.png';
 
 import StoreContext from '../../../ContextAPI/ContextAPI';
 
@@ -29,7 +30,7 @@ export default function StepOne() {
                     <WrapItem >
                         <Center boxShadow="2xl" onClick={() => NextStepDetail.setNestedStep("moveIIndStep")} w='310px' h='180px'>
                             <VStack >
-                                <Image src={StartInvestment} w='150px' h='150px' />
+                                <Image src={laptopIcon} w='130px' h='130px' />
                                 <Text color='white'>Laptop/Pc</Text>
                             </VStack>
                         </Center>
@@ -37,42 +38,42 @@ export default function StepOne() {
                     <WrapItem>
                         <Center rounded="md" boxShadow="2xl" onClick={() => NextStepDetail.setNestedStep("moveIIndStep")} w='310px' h='180px'>
                             <VStack>
-                                <Image src={UpdateCRP} w='190px' h='150px' />
+                                <Image src={devices} w='120px' h='125px' />
                                 <Text color='white'>Mobile/Gadgets</Text>
                             </VStack>
                         </Center>
                     </WrapItem>
                     <WrapItem >
-                        <Center boxShadow="2xl" onClick={nextStep} w='310px' h='180px'>
+                        <Center boxShadow="2xl" onClick={() => NextStepDetail.setNestedStep("moveIIndStep")} w='310px' h='180px'>
                             <VStack>
-                                <Image src={UpdateCRP} w='190px' h='150px' />
+                                <Image src={purse} w='150px' h='140px' />
                                 <Text color='white'>Apparel</Text>
                             </VStack>
                         </Center>
                     </WrapItem>
                 </Wrap>
 
-                <Wrap spacing='30px' align='center' justify='center' >
+                <Wrap spacing='30px' align='center' justify='center' pb={10}>
                     <WrapItem>
-                        <Center boxShadow="2xl" onClick={nextStep} w='310px' h='180px'>
+                        <Center boxShadow="2xl" onClick={() => NextStepDetail.setNestedStep("moveIIndStep")} w='310px' h='180px'>
                             <VStack>
-                                <Image src={PC} w='130px' h='120px' />
+                                <Image src={customization} w='110px' h='110px' />
                                 <Text color='white'>Custom </Text>
                             </VStack>
                         </Center>
                     </WrapItem>
                     <WrapItem>
-                        <Center rounded="md" boxShadow="2xl" onClick={nextStep} w='310px' h='180px' >
+                        <Center rounded="md" boxShadow="2xl" onClick={() => NextStepDetail.setNestedStep("moveIIndStep")} w='310px' h='180px' >
                             <VStack>
-                                <Image src={Wallet} w='130px' h='120px' />
+                                <Image src={graduated} w='130px' h='120px' />
                                 <Text color='white'>Education</Text>
                             </VStack>
                         </Center>
                     </WrapItem>
                     <WrapItem >
-                        <Center boxShadow="2xl" w='310px' h='180px'>
+                        <Center rounded="md" boxShadow="2xl" onClick={() => NextStepDetail.setNestedStep("moveIIndStep")} w='310px' h='180px'>
                             <VStack>
-                                <Image src={ChandePass} w='130px' h='120px' />
+                                <Image src={travelIcon} w='130px' h='120px' />
                                 <Text color='white'> Vocation</Text>
                             </VStack>
                         </Center>
