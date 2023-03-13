@@ -1,19 +1,5 @@
 import React from "react";
-import {
-    Box,
-    Stack,
-    Heading,
-    Flex,
-    Text,
-    Button,
-    useDisclosure,
-    Image,
-    HStack,
-    CardHeader,
-    Card,
-    CardBody,
-    CardFooter
-} from "@chakra-ui/react";
+import { Box, Stack, Heading, Flex, Text, Button, useDisclosure, Image, HStack, CardHeader, Card, CardBody, CardFooter } from "@chakra-ui/react";
 import { HamburgerIcon, PhoneIcon, AddIcon, WarningIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import GuapZlogo from '../../assets/GuapZlogo.png'
@@ -32,7 +18,6 @@ import SliderInputScreen from "../SliderInputScreen/SliderInputScreen";
 import StepComponent from "../StepComponent/StepComponent";
 import CardsComponent from "../CardsComponent/CardsComponent";
 import QuizComponent from "../QuizComponent/QuizComponent";
-import QuizUI from "../QuizComponent/QuizUI";
 import QuizScreen from "../QuizComponent/QuizScreen";
 import ChartDashboard from "../ChartDashboard/ChartDashboard";
 
@@ -134,12 +119,13 @@ const Header = (props) => {
             {/* <TwoCardDesOption /> */}
             {/* <OneCardDesOption /> */}
             {/* <TwoCards /> */}
-            <StepComponent />
+            {/* <StepComponent /> */}
             {/* <SliderInputScreen /> */}
             {/* <CardsComponent /> */}
+
+
             {/* <QuizComponent /> */}
             {/* <QuizScreen /> */}
-            {/* <QuizUI /> */}
             {/* <ChartDashboard /> */}
 
             {/* <StepOne /> */}

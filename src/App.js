@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   ChakraBaseProvider,
   extendBaseTheme,
@@ -27,6 +28,7 @@ import InvestmentPlant from "./Component/InvestmentPlant/InvestmentPlant";
 
 import { StepsTheme as Steps } from "chakra-ui-steps";
 import QuizComponent from "./Component/QuizComponent/QuizComponent";
+import { StoreProvider } from "./ContextAPI/ContextAPI";
 // import TwoCards from "../TwoCards/TwoCards";
 // import DashboardTwo from "../DashboardTwo/DashboardTwo";
 // import TwoCardOption from "../TwoCardFourOption/TwoCardFourOption";
@@ -53,17 +55,20 @@ const theme = extendBaseTheme({
 // // 3. Extend the theme
 // const theme = extendTheme({ breakpoints })
 function App() {
+  const [NestedStep, setNestedStep] = useState("");
+
   return (
     <ChakraBaseProvider theme={theme}>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          {/* <Route path="/" element={<SignIn />} /> */}
-          {/* <Route path="/" element={<StepComponent />} /> */}
-          {/* <Route path="/" element={<InvestmentPlant />} /> */}
-          {/* <Route path="/" element={<QuizComponent />} /> */}
+      <StoreProvider value={{ NestedStep, setNestedStep }}>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            {/* <Route path="/" element={<SignIn />} /> */}
+            <Route path="/" element={<StepComponent />} />
+            {/* <Route path="/" element={<InvestmentPlant />} /> */}
+            {/* <Route path="/" element={<QuizComponent />} /> */}
 
-          {/* <Route path="/login" element={<Login />} />
+            {/* <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/WebFourCards" element={<WebFourCards />} />
@@ -74,9 +79,10 @@ function App() {
           <Route path="/TwoCardDesOption" element={<TwoCardDesOption />} />
           <Route path="/OneCardDesOption" element={<OneCardDesOption />} />
           <Route path="/SliderInputScreen" element={<SliderInputScreen />} />
-          <Route path="/CardsComponent" element={<CardsComponent />} /> */}
-        </Routes>
-      </BrowserRouter>
+        <Route path="/CardsComponent" element={<CardsComponent />} /> */}
+          </Routes>
+        </BrowserRouter>
+      </StoreProvider>
       {/* <Header /> */}
       {/* <Login /> */}
     </ChakraBaseProvider>

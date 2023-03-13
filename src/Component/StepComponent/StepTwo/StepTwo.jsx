@@ -1,18 +1,23 @@
+import React, { useState, useContext, useEffect } from "react";
 import { Step, Steps, useSteps } from "chakra-ui-steps"
 import { Heading, Box, Text, Flex, Button, HStack, useRadio, useRadioGroup, Tab, Tabs, Input, TabList, VStack, Image, Wrap, Card, CardHeader, CardFooter, CardBody, WrapItem, Container, Center, } from "@chakra-ui/react";
 import ChandePass from '../../../assets/ChandePass.png'
 import { HamburgerIcon, ArrowRightIcon, AddIcon, WarningIcon } from "@chakra-ui/icons"
+import StoreContext from '../../../ContextAPI/ContextAPI';
+
+
 const steps = [{ label: "Step 1" }, { label: "Step 2" }, { label: "Step 3" }]
+
 
 export const ClickableSteps = () => {
     const { nextStep, prevStep, reset, activeStep, setStep } = useSteps({
         initialStep: 0,
     })
+    const NextStepDetail = useContext(StoreContext);
 
     return (
         <Flex flexDir="column" width="100%" backgroundColor='#A7B3C2' rounded="md">
             <Steps onClickStep={(step) => setStep(step)} rounded="md" activeStep={activeStep} >
-                {/* {steps.map(({ label }, index) => ( */}
                 <Step label={"Target Amount"} key={1}>
                     <Box boxShadow="2xl" minHeight="70vh" rounded="md" paddingTop='10%' >
 
@@ -41,7 +46,7 @@ export const ClickableSteps = () => {
                     </Box>
                 </Step>
 
-                <Step label={"Time Horizon"} key={1}>
+                <Step label={"Time Horizon"} key={2}>
                     <Box boxShadow="2xl" minHeight="70vh" rounded="md" paddingTop='10%' backgroundColor='#A7B3C2'>
                         <Wrap spacing='30px' align='center' justify='center'>
                             <WrapItem>
@@ -71,7 +76,7 @@ export const ClickableSteps = () => {
                     </Box>
                 </Step>
 
-                <Step label={"Nested Login"} key={1}>
+                <Step label={"Nested Login"} key={3}>
                     <Box boxShadow="2xl" minHeight="70vh" rounded="md" paddingTop='10%' backgroundColor='#A7B3C2'>
                         <Wrap spacing='30px' align='center' justify='center'>
                             <WrapItem>
@@ -95,7 +100,7 @@ export const ClickableSteps = () => {
                                         </HStack>
                                     </CardBody>
                                     <CardFooter>
-                                        <Button backgroundColor="blue.100">View here</Button>
+                                        <Button backgroundColor="blue.100" onClick={() => NextStepDetail.setNestedStep("moveThirdStep")}>View here</Button>
                                     </CardFooter>
                                 </Card>
                             </WrapItem>
