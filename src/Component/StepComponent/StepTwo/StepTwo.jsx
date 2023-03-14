@@ -1,9 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Step, Steps, useSteps } from "chakra-ui-steps"
-import { Heading, Box, Text, Flex, Button, HStack, useRadio, useRadioGroup, Tab, Tabs, Input, TabList, VStack, Image, Wrap, Card, CardHeader, CardFooter, CardBody, WrapItem, Container, Center, } from "@chakra-ui/react";
-import ChandePass from '../../../assets/ChandePass.png'
-import { HamburgerIcon, ArrowRightIcon, AddIcon, WarningIcon } from "@chakra-ui/icons"
+import { Heading, Box, Text, Flex, Button, HStack, Stack, Input, VStack, Image, Wrap, Card, CardHeader, CardFooter, CardBody, WrapItem, } from "@chakra-ui/react";
+import customization from '../../../assets/customization.png'
+import Pngwing from '../../../assets/Pngwing.png'
+import { ArrowRightIcon } from "@chakra-ui/icons"
 import StoreContext from '../../../ContextAPI/ContextAPI';
+import ChandePass from '../../../assets/ChandePass.png'
 
 
 const steps = [{ label: "Step 1" }, { label: "Step 2" }, { label: "Step 3" }]
@@ -20,100 +22,114 @@ export const ClickableSteps = () => {
             <Steps onClickStep={(step) => setStep(step)} rounded="md" activeStep={activeStep} >
                 <Step label={"Target Amount"} key={1}>
                     <Box boxShadow="2xl" minHeight="70vh" rounded="md" paddingTop='10%' >
-
                         <Wrap spacing='30px' align='center' justify='center'>
                             <WrapItem>
                                 <Card backgroundColor="white" height={80} borderRadius={20} boxShadow='xl'>
-                                    <CardHeader >
-                                        <Heading borderTopRadius={20} p={2} backgroundColor="#084877" height={20} color='white' textAlign="center" fontSize={25} fontWeight="bold">What is your target amount ?</Heading>
+                                    <CardHeader backgroundColor="#0F4B63" borderTopRadius={20} p={2} >
+                                        <HStack>
+                                            <Image src={customization} w='80px' h='70px' />
+                                            <Text color='gray.100' textAlign="center" fontSize={25} fontWeight="bold">
+                                                What is your target amount ?
+                                            </Text>
+                                        </HStack>
                                     </CardHeader>
                                     <CardBody >
-                                        {/* <Text>View a summary of all your customers over the last month.</Text> */}
+                                        <Stack spacing={3} mt={10}>
+                                            <Input variant='outline' placeholder='Outline' rounded="4" boxShadow='outline' m="3%" p="3%" />
+                                        </Stack>
                                     </CardBody>
+                                    <VStack mt={10} >
+                                        <Button colorScheme='teal' bg="#0F4B63" w={40}><ArrowRightIcon /><ArrowRightIcon /></Button>
+                                    </VStack>
                                 </Card>
                             </WrapItem>
                             <WrapItem>
-                                <Card height={60} boxShadow='xl' h='170px' p={2}>
-                                    <CardBody  >
-                                        <Image src={ChandePass} w='190px' h='170px' />
-                                    </CardBody>
+                                <Card height={60} boxShadow='xl' h='270px' p={2}>
+                                    <Image src={Pngwing} w='220px' h='250px' />
                                 </Card>
                             </WrapItem>
                         </Wrap>
-                        {/* <VStack mt={10} >
-                            <Button colorScheme='teal' w={40}> <ArrowRightIcon />  <ArrowRightIcon /></Button>
-                        </VStack> */}
                     </Box>
                 </Step>
 
                 <Step label={"Time Horizon"} key={2}>
-                    <Box boxShadow="2xl" minHeight="70vh" rounded="md" paddingTop='10%' backgroundColor='#A7B3C2'>
+                    <Box boxShadow="2xl" minHeight="70vh" rounded="md" paddingTop='10%' >
                         <Wrap spacing='30px' align='center' justify='center'>
                             <WrapItem>
                                 <Card backgroundColor="white" height={80} borderRadius={20} boxShadow='xl'>
-                                    <CardHeader >
-                                        <Heading borderTopRadius={20} p={2} backgroundColor="#084877" height={20} color='white' textAlign="center" fontSize={25} fontWeight="bold">What is your Time Horizon?</Heading>
+                                    <CardHeader backgroundColor="#0F4B63" borderTopRadius={20} p={2} >
+                                        <HStack>
+                                            <Image src={customization} w='80px' h='70px' />
+                                            <Text color='gray.100' textAlign="center" fontSize={25} fontWeight="bold">
+                                                What is your Time Horizon?
+                                            </Text>
+                                        </HStack>
                                     </CardHeader>
                                     <CardBody >
-                                        {/* <Text>View a summary of all your customers over the last month.</Text> */}
+                                        <Stack spacing={3} mt={10}>
+                                            <Input variant='outline' placeholder='Outline' rounded="4" boxShadow='outline' m="3%" p="3%" />
+                                        </Stack>
                                     </CardBody>
-                                    <CardFooter>
-                                        {/* <Button backgroundColor="blue.100">View here</Button> */}
-                                    </CardFooter>
+                                    <VStack mt={10} >
+                                        <Button colorScheme='teal' bg="#0F4B63" w={40}><ArrowRightIcon /><ArrowRightIcon /></Button>
+                                    </VStack>
                                 </Card>
                             </WrapItem>
                             <WrapItem>
-                                <Card height={60} boxShadow='xl' h='170px' p={2}>
-                                    <CardBody  >
-                                        <Image src={ChandePass} w='190px' h='170px' />
-                                    </CardBody>
+                                <Card height={60} boxShadow='xl' h='270px' p={2}>
+                                    <Image src={Pngwing} w='220px' h='250px' />
                                 </Card>
                             </WrapItem>
                         </Wrap>
-                        {/* <VStack mt={10} >
-                            <Button colorScheme='teal' w={40}> <ArrowRightIcon />  <ArrowRightIcon /></Button>
-                        </VStack> */}
                     </Box>
                 </Step>
 
                 <Step label={"Nested Login"} key={3}>
-                    <Box boxShadow="2xl" minHeight="70vh" rounded="md" paddingTop='10%' backgroundColor='#A7B3C2'>
+                    <Box boxShadow="2xl" minHeight="70vh" rounded="md" paddingTop='10%' >
                         <Wrap spacing='30px' align='center' justify='center'>
                             <WrapItem>
-                                <Card backgroundColor="white" height={80} borderRadius={20} boxShadow='xl' width="">
-                                    <CardHeader>
-                                        <Heading
-                                            borderTopRadius={20} p={2}
-                                            backgroundColor="#084877" height={20}
-                                            color='white' textAlign="center" fontSize={25}
-                                            fontWeight="bold">Please Specify Payment frequency</Heading>
+                                <Card backgroundColor="white" borderRadius={20} boxShadow='xl'>
+                                    <CardHeader backgroundColor="#0F4B63" borderTopRadius={20} p={2} >
+                                        <HStack>
+                                            <Image src={customization} w='80px' h='70px' />
+                                            <Text color='gray.100' textAlign="center" fontSize={25} fontWeight="bold">
+                                                Please Specify payment frequency?
+                                            </Text>
+                                        </HStack>
                                     </CardHeader>
-                                    <CardBody alignItems="center" justifyContent="center">
-                                        <HStack height={20} display={{ sm: 'flex' }} flex={1} alignItems="center" justifyContent="center" mt={3} >
-                                            <Input placeholder=' Montly' rounded="4" boxShadow='outline' m="3%" height={8} />
-                                            <Input placeholder='Quarterly' size='sm' rounded="4" boxShadow='outline' m="3%" height={8} />
-                                        </HStack>
-
-                                        <HStack height={20} display={{ sm: 'flex' }} flex={1} alignItems="center" justifyContent="center" m={3} p={3}>
-                                            <Input placeholder='Semi annual' rounded="4" boxShadow='outline' m="3%" height={8} />
-                                            <Input placeholder='Annual' size='sm' rounded="4" boxShadow='outline' m="3%" height={8} />
-                                        </HStack>
+                                    <CardBody>
+                                        <Wrap spacing='30px' align='center' justify='center' mt={5}>
+                                            <Button
+                                                bg="#084877" color="whiteSmoke" borderRadius="20px" boxShadow="inset -5px -5px 12px #FFFFFF"
+                                                _hover={{ bg: "grey" }} size='lg' height='48px' minW='220px'
+                                            >Monthly</Button>
+                                            <Button
+                                                bg="#084877" color="whiteSmoke" borderRadius="20px" boxShadow="inset -5px -5px 12px #FFFFFF"
+                                                _hover={{ bg: "grey" }} size='lg' height='48px' minW='220px'
+                                            >Quartly</Button>
+                                        </Wrap>
+                                        <Wrap spacing='30px' align='center' justify='center' mt={5}>
+                                            <Button
+                                                bg="#084877" color="whiteSmoke" borderRadius="20px" boxShadow="inset -5px -5px 12px #FFFFFF"
+                                                _hover={{ bg: "grey" }} size='lg' height='48px' minW='220px'
+                                            >Monthly</Button>
+                                            <Button
+                                                bg="#084877" color="whiteSmoke" borderRadius="20px" boxShadow="inset -5px -5px 12px #FFFFFF"
+                                                _hover={{ bg: "grey" }} size='lg' height='48px' minW='220px'
+                                            >Quartly</Button>
+                                        </Wrap>
                                     </CardBody>
-                                    <CardFooter>
-                                        <Button backgroundColor="blue.100" onClick={() => NextStepDetail.setNestedStep("moveThirdStep")}>Next Step</Button>
-                                    </CardFooter>
+                                    <VStack m={5} >
+                                        <Button colorScheme='teal' bg="#0F4B63" w={40}><ArrowRightIcon /><ArrowRightIcon /></Button>
+                                    </VStack>
                                 </Card>
                             </WrapItem>
                             <WrapItem>
-                                <Image src={ChandePass} w='190px' h='170px' />
-                                {/* <Card height={60} boxShadow='xl' h='170px' p={2}>
-                                    <CardBody>
-                                    </CardBody>
-                                </Card> */}
+                                <Card height={60} boxShadow='xl' h='270px' p={2}>
+                                    <Image src={Pngwing} w='220px' h='250px' />
+                                </Card>
                             </WrapItem>
                         </Wrap>
-                        <VStack mt={10} >
-                        </VStack>
                     </Box>
                 </Step>
             </Steps>
