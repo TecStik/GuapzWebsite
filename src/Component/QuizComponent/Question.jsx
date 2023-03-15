@@ -1,32 +1,29 @@
-import { Container, Text, Link, Card, SimpleGrid, WrapItem, CardFooter, VStack, CardBody, Button, Image, Input, HStack, Heading, Box, Wrap, CardHeader } from '@chakra-ui/react';
-
 import React, { useEffect, useRef, useState } from 'react'
+import { Container, Text, Link, Card, SimpleGrid, WrapItem, CardFooter, VStack, CardBody, Button, Box, Wrap, CardHeader } from '@chakra-ui/react';
 import { flushSync } from "react-dom";
-import { ArrowRightIcon } from "@chakra-ui/icons";
-import Pngwing from '../../assets/Pngwing.png';
-import pen from '../../assets/pen.png';
+import { ArrowRightIcon, ArrowLeftIcon } from "@chakra-ui/icons";
 
 
-export default function Question({ question, totalQuestions, currentQuestion, setAnswer }) {
+export default function Question({ question, totalQuestions, currentQuestion, setAnswer, setPreAnswer }) {
 
     let [selectOption, setSelectOption] = useState(null)
-    const timer = useRef()
-    const progressBar = useRef()
-
 
     console.log(question);
     console.log(totalQuestions);
     console.log(currentQuestion);
-    console.log(selectOption,"selectOption");
+    console.log(selectOption, "selectOption");
     // console.log(setAnswer);
 
     function gotoQuestionNext() {
-        if (timer.current) {
-            clearTimeout(timer.current)
-        }
 
         flushSync(() => {
             setAnswer(selectOption)
+        })
+        setSelectOption(null)
+    }
+    function gotoPrevQuestion() {
+        flushSync(() => {
+            setPreAnswer(selectOption)
         })
         setSelectOption(null)
     }
@@ -42,142 +39,77 @@ export default function Question({ question, totalQuestions, currentQuestion, se
 
 
     return (
-        <div>
-            <Container
-                // maxW="container"
-                // p='2'
-                rounded='lg'
-            >
-    
-                <Box
-                    boxShadow="2xl"
-                    rounded="md"
-                    padding='5%'
-                    backgroundColor='#A7B3C2'
-                    >
-                    <Wrap
-                        // spacing='30px'
-                        align='center' justify='center'
-                        p={4}
-                        >
-                        <WrapItem>
-                            <Card
-                                backgroundColor="white"
-                                borderRadius={20}
-                                boxShadow='xl'
-                                direction="column"
-                                
-                                // h="100%"
-                                // w="100%"
-                                >
-                                {/* <Text>   Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, beatae voluptatum. </Text> */}
-                                <CardBody>
-                                    <Box p={4} display={{ md: 'flex' }} 
-                                     backgroundColor="#DBDCDE"
-                                     color='#084877'
-                                     fontWeight="bold">
-                                        {/* <Box flexShrink={0}>
-                                            <Image
-                                                borderRadius='lg'
-                                                width={{ md: 40 }}
-                                                src='https://bit.ly/2jYM25F'
-                                                alt='Woman paying for a purchase'
-                                            />
-                                        </Box> */}
-                                        <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
-                                            <Text
-                                                fontWeight='bold'
-                                                textTransform='uppercase'
-                                                fontSize='sm'
-                                                letterSpacing='wide'
-                                                color='teal.600'
-                                            >
-                                                {currentQuestion} {question.Description}
-                                            </Text>
-                                            <Link
-                                                mt={1}
-                                                display='block'
-                                                fontSize='lg'
-                                                lineHeight='normal'
-                                                fontWeight='semibold'
-                                                href='#'
-                                            >
-                                                {currentQuestion} {question.Description}
-                                            </Link>
-                                            {/* <Text mt={2} color='gray.500'>
-                                                {currentQuestion} {question.Description}
-                                            </Text> */}
-                                        </Box>
+        <Container rounded='lg'>
+
+            <Box boxShadow="2xl" rounded="md" padding='5%' backgroundColor='#A7B3C2'>
+                <Wrap align='center' justify='center' p={4}>
+                    <WrapItem>
+                        <Card backgroundColor="white" borderRadius={20} boxShadow='xl' direction="column" >
+                            <CardBody>
+                                <Box p={4} display={{ md: 'flex' }} backgroundColor="#DBDCDE" color='#084877' fontWeight="bold">
+
+                                    <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
+
+                                        <Text fontWeight='bold' textTransform='uppercase' fontSize='sm'
+                                            letterSpacing='wide' color='teal.600'>
+                                            {currentQuestion} {question.Description}
+                                        </Text>
+
+                                        <Link mt={1} display='block' fontSize='lg' lineHeight='normal'
+                                            fontWeight='semibold' href='#'>
+                                            {currentQuestion} {question.Description}
+                                        </Link>
                                     </Box>
-                                    <hr />
-                                    {/* <Heading borderTopRadius={20}
-                                        p={2}
-                                        backgroundColor="#DBDCDE"
-                                        color='#084877'
-                                        fontWeight="bold"
-                                    >
-                                        <Text fontWeight="bold" w={80}>{currentQuestion} {question.Description}</Text>
-                                    </Heading> */}
-                                    <SimpleGrid
-                                        justifyItems="center"
-                                        columns={2}
-                                        minChildWidth='220px'
-                                        maxW="600px"
-                                        w="100vw"
-                                        spacing='20px'
-                                        minH={300}
-                                        alignItems="center"
-                                        justifyContent="center"
-                                        p={5}
-                                    >
+                                </Box>
+                                <hr />
+                                <SimpleGrid
+                                    justifyItems="center" columns={2} minChildWidth='220px'
+                                    maxW="600px" w="100vw" spacing='20px' minH={300}
+                                    alignItems="center" justifyContent="center" p={5}
+                                >
 
-                                        {/* <br /> */}
-                                        {question.Options.map((options, i) => {
+                                    {question.Options.map((options, i) => {
 
-                                            console.log(options, "raza");
-                                            return (
-                                                <Button
-                                                    key={i}
-                                                    onClick={() => setSelectOption(i)}
-                                                    bg="#084877"
-                                                    color="whiteSmoke"
-                                                    border='none'
-                                                    borderRadius="20px"
-                                                    boxShadow="inset -5px -5px 12px #FFFFFF"
-                                                    fontSize="lg"
-                                                    _hover={{ bg: "grey" }}
-                                                    size='lg'
-                                                    height='48px'
-                                                    minW='220px'
-                                                    // p={5}
-                                                    // maxW='20px'
-                                                    alignItems="center"
-                                                    justifyContent="center"
+                                        console.log(options, "raza");
+                                        return (
+                                            <Button
+                                                key={i}
+                                                onClick={() => setSelectOption(i)}
+                                                bg="#084877"
+                                                color="whiteSmoke"
+                                                border='none'
+                                                borderRadius="20px"
+                                                boxShadow="inset -5px -5px 12px #FFFFFF"
+                                                fontSize="lg"
+                                                _hover={{ bg: "grey" }}
+                                                size='lg'
+                                                height='48px'
+                                                minW='220px'
+                                                // p={5}
+                                                // maxW='20px'
+                                                alignItems="center"
+                                                justifyContent="center"
 
-                                                >
-                                                    {options.Quizlable}
-                                                </Button>
-                                            )
-                                        })}
-                                    </SimpleGrid>
+                                            >
+                                                {options.Quizlable}
+                                            </Button>
+                                        )
+                                    })}
+                                </SimpleGrid>
+                            </CardBody>
 
-                                    {/* <VStack>
-
-                                    </VStack> */}
-                                </CardBody>
-                                {/* <VStack m={2} align='center' justify='center'>
-                                </VStack> */}
-                                <CardFooter
-                                    align='center' justify='center' p={5}>
+                            <CardFooter justifyContent="space-evenly">
+                                <Wrap mb={5}>
+                                    <Button colorScheme='teal' w={40} onClick={gotoPrevQuestion}> <ArrowLeftIcon />  <ArrowLeftIcon /></Button>
                                     <Button colorScheme='teal' w={40} onClick={gotoQuestionNext}> <ArrowRightIcon />  <ArrowRightIcon /></Button>
-                                </CardFooter>
-                            </Card>
-                        </WrapItem>
-                        {/* <Image src={Pngwing} w='180px' h='200px' /> */}
-                    </Wrap>
-                </Box>
-            </Container>
-        </div>
+                                </Wrap>
+                            </CardFooter>
+                        </Card>
+                    </WrapItem>
+                </Wrap>
+            </Box>
+        </Container>
+
     )
 }
 

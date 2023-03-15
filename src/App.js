@@ -34,6 +34,7 @@ import { StoreProvider } from "./ContextAPI/ContextAPI";
 // import TwoCardOption from "../TwoCardFourOption/TwoCardFourOption";
 // import TwoCardTwoOption from "../TwoCardTwoOption/TwoCardTwoOption";
 // import TwoCardDesOption from "../TwoCardDesOption/TwoCardDesOption";
+
 const { Button } = chakraTheme.components;
 
 const theme = extendBaseTheme({
@@ -42,24 +43,14 @@ const theme = extendBaseTheme({
     Steps,
   },
 });
-// import { extendTheme } from '@chakra-ui/react'
 
-// const breakpoints = {
-//   sm: '320px',
-//   md: '768px',
-//   lg: '960px',
-//   xl: '1200px',
-//   '2xl': '1536px',
-// }
-
-// // 3. Extend the theme
-// const theme = extendTheme({ breakpoints })
 function App() {
   const [NestedStep, setNestedStep] = useState("");
+  const [ShowQuiz, setShowQuiz] = useState(false);
 
   return (
     <ChakraBaseProvider theme={theme}>
-      <StoreProvider value={{ NestedStep, setNestedStep }}>
+      <StoreProvider value={{ NestedStep, setNestedStep, ShowQuiz, setShowQuiz }}>
         <BrowserRouter>
           <Header />
           <Routes>

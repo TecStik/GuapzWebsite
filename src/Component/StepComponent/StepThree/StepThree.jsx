@@ -10,6 +10,7 @@ import {
     Box, Stack, Wrap, SliderTrack, Center, WrapItem, NumberDecrementStepper, Slider, Heading, Flex, Text, View, NumberInputField, NumberInput,
     SliderThumb, Input, Button, SliderFilledTrack, NumberIncrementStepper, NumberInputStepper, HStack, CardHeader, Card, CardBody, CardFooter, Container, VStack
 } from "@chakra-ui/react";
+import QuizScreen from "../../QuizComponent/QuizScreen";
 // import { HamburgerIcon, ArrowRightIcon, AddIcon, WarningIcon } from "@chakra-ui/icons";
 
 export default function StepThree() {
@@ -27,105 +28,49 @@ export default function StepThree() {
     const [value, setValue] = React.useState(0)
     const handleChange = (value) => setValue(value)
     return (
-        <Container maxW="container" p='10' rounded='lg'>
-            <Box
-                boxShadow="2xl"
-                rounded="md"
-                padding='5%'
-                backgroundColor='#A7B3C2'
-            >
-                <Wrap spacing='30px'
-                    align='center' justify='center'
-                >
-                    <WrapItem>
-                        <Card
-                            backgroundColor="white"
-                            height={80}
-                            borderRadius={20}
-                            boxShadow='xl'
-                        // width={290}
-                        >
-                            <CardHeader >
-                                <Heading
-                                    borderTopRadius={20} p={2}
-
-                                    backgroundColor="#084877" height={20}
-                                    color='white' textAlign="center" fontSize={25}
-                                    fontWeight="bold"> Risk Assessment Result</Heading>
-                            </CardHeader>
-                            <CardBody
-                                alignItems="center"
-                                justifyContent="center">
-
-                                <VStack height={20}
-                                    // bgColor="blue.100"
-                                    display={{ sm: 'flex' }}
-                                    flex={1}
-                                    alignItems="center"
-                                    justifyContent="center"
-                                    m={14}
-                                // p={14}
-                                >
-                                    <Text textAlign="center" fontSize={25}
-                                        fontWeight="bold">Moderate</Text>
-                                    <NumberInput maxW={52} m="3%"
-                                        p="3%" value={value} rounded="4"
-                                        boxShadow='outline' onChange={handleChange}>
-                                        <NumberInputField />
-                                        <NumberInputStepper>
-                                            <NumberIncrementStepper />
-                                            <NumberDecrementStepper />
-                                        </NumberInputStepper>
-                                    </NumberInput>
-                                    <Text textAlign="center" fontSize={25}
-                                        fontWeight="bold">Out of 10 Can adjust upto 2 notches</Text>
-                                </VStack>
-
-                                <VStack>
-                                    {/* <Slider
-                                    flex='1'
-                                    focusThumbOnChange={false}
-                                    value={value}
-                                    onChange={handleChange}
-                                >
-                                    <SliderTrack>
-                                        <SliderFilledTrack />
-                                    </SliderTrack>
-                                    <SliderThumb fontSize='sm' boxSize='32px' children={value} />
-                                </Slider> */}
-                                </VStack>
-                            </CardBody>
-                            <CardFooter>
-                                {/* <Button backgroundColor="blue.100">View here</Button> */}
-                            </CardFooter>
-                        </Card>
-                    </WrapItem>
-                    {/* <WrapItem>
-                    <Card
-                        // backgroundColor="gray.100"
-                        height={60}
-                        // borderRadius={20}
-                        boxShadow='xl'
-                        h='170px'
-                        p={2}
-                    >
-                        <CardHeader >
-                            <Heading borderTopRadius={20} size='md' backgroundColor="#084877" height={20} color='white' textAlign="center" fontSize={25} fontWeight="bold">Goals Base Tnvestment</Heading>
-                        </CardHeader>
-                        <CardBody  >
-                            <Image src={ChandePass} w='190px' h='170px' />
-                        </CardBody>
-                        <CardFooter>
-                            <Button backgroundColor="blue.100">View here</Button>
-                        </CardFooter>
-                    </Card>
-                </WrapItem> */}
-                </Wrap>
-                <VStack mt={10} >
-                    <Button colorScheme='teal' w={40} onClick={() => NextStepDetail.setNestedStep("moveThirdStep")}> <ArrowRightIcon />  <ArrowRightIcon /></Button>
-                </VStack>
-            </Box>
+        <Container>
+            <QuizScreen />
         </Container>
+        // <Container maxW="container" p='10' rounded='lg'>
+        //     <Box boxShadow="2xl" rounded="md" padding='5%' backgroundColor='#A7B3C2'>
+        //         <Wrap spacing='30px' align='center' justify='center'>
+        //             <WrapItem>
+        //                 <Card backgroundColor="white" height={80} borderRadius={20} boxShadow='xl'>
+
+        //                     <CardHeader>
+        //                         <Heading borderTopRadius={20} p={2} backgroundColor="#084877" height={20}
+        //                             color='white' textAlign="center" fontSize={25} fontWeight="bold"
+        //                         > Risk Assessment Result</Heading>
+        //                     </CardHeader>
+
+        //                     <CardBody alignItems="center" justifyContent="center">
+        //                         <VStack height={20} display={{ sm: 'flex' }} flex={1} alignItems="center"
+        //                             justifyContent="center" m={14} >
+        //                             <Text textAlign="center" fontSize={25} fontWeight="bold">Moderate</Text>
+        //                             <NumberInput maxW={52} m="3%"
+        //                                 p="3%" value={value} rounded="4"
+        //                                 boxShadow='outline' onChange={handleChange}>
+        //                                 <NumberInputField />
+        //                                 <NumberInputStepper>
+        //                                     <NumberIncrementStepper />
+        //                                     <NumberDecrementStepper />
+        //                                 </NumberInputStepper>
+        //                             </NumberInput>
+        //                             <Text textAlign="center" fontSize={25} fontWeight="bold">
+        //                                 Out of 10 Can adjust upto 2 notches
+        //                             </Text>
+        //                         </VStack>
+        //                     </CardBody>
+        //                 </Card>
+        //             </WrapItem>
+
+        //         </Wrap>
+        //         <VStack mt={10} >
+        //             <Button colorScheme='teal' w={40} onClick={() => NextStepDetail.setNestedStep("moveThirdStep")}> <ArrowRightIcon />  <ArrowRightIcon /></Button>
+        //         </VStack>
+        //     </Box>
+        // </Container>
+        // ====================>
         // <Container maxW="container" p='2' rounded='lg'>
         //     <Box boxShadow="2xl" rounded="md" padding='5%' backgroundColor='#A7B3C2'>
         //         <Wrap spacing='30px' align='center' justify='center'>

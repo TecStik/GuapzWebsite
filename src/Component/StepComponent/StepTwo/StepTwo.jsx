@@ -6,7 +6,7 @@ import Pngwing from '../../../assets/Pngwing.png'
 import { ArrowRightIcon } from "@chakra-ui/icons"
 import StoreContext from '../../../ContextAPI/ContextAPI';
 import ChandePass from '../../../assets/ChandePass.png'
-
+import { DatePicker, Space } from 'antd';
 
 const steps = [{ label: "Step 1" }, { label: "Step 2" }, { label: "Step 3" }]
 
@@ -16,7 +16,9 @@ export const ClickableSteps = () => {
         initialStep: 0,
     })
     const NextStepDetail = useContext(StoreContext);
-
+    const onChange = (date, dateString) => {
+        console.log(date, dateString);
+    };
     return (
         <Flex flexDir="column" width="100%" backgroundColor='#A7B3C2' rounded="md">
             <Steps onClickStep={(step) => setStep(step)} rounded="md" activeStep={activeStep} >
@@ -66,8 +68,15 @@ export const ClickableSteps = () => {
                                         </HStack>
                                     </CardHeader>
                                     <CardBody >
-                                        <Stack spacing={3} mt={10}>
-                                            <Input variant='outline' placeholder='Outline' rounded="4" boxShadow='outline' m="3%" p="3%" />
+                                        <Stack spacing={3} mt={10} style={{
+                                            width: '100%', justifyItems: "center", alignItems: "center"
+                                        }}>
+                                            <Space direction="vertical" style={{
+                                                width: '50%', alignItems: "center"
+                                            }}>
+                                                <DatePicker onChange={onChange} />
+                                            </Space>
+                                            {/* <Text variant='outline' placeholder='Outline' rounded="4" boxShadow='outline' m="3%" p="3%" /> */}
                                         </Stack>
                                     </CardBody>
                                     <VStack mt={10} >
