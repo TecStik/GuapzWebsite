@@ -10,6 +10,7 @@ import StepFour from "./StepFour/StepFour";
 
 import moment from "moment";
 import dayjs from 'dayjs';
+import StepFive from "./StepFive/StepFive";
 
 const steps = [{ label: "Step 1" }, { label: "Step 2" }, { label: "Step 3" }, { label: "Step 4" }, { label: "Step 5" }]
 // const nestedSteps = [{ label: "Step 1" }, { label: "Step 2" }, { label: "Step 3" }]
@@ -78,7 +79,7 @@ export const CardsComponent = () => {
                 {/* Step One */}
                 <Step label={"Fund Selection"} key={4}><StepFour /></Step>
                 {/* Confirm/Adjust your Plan*/}
-                <Step label={"Fund Selection"} key={4}><StepThree /></Step>
+                <Step label={"Fund Selection"} key={4}><StepFive /></Step>
             </Steps>
 
             {activeStep === steps.length ? (
