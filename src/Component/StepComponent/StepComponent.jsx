@@ -19,17 +19,23 @@ export const CardsComponent = () => {
 
     const { nextStep, prevStep, reset, activeStep, setStep } = useSteps({ initialStep: 0, })
     const NextStepDetail = useContext(StoreContext);
-
     useEffect(() => {
         if (NextStepDetail.NestedStep === "moveIIndStep") {
             nextStep()
-        } else if (NextStepDetail.NestedStep === "moveThirdStep") {
-            // nextStep()
-            <StepThree />
+            // console.log(NextStepDetail.NestedStep, "check");
+            // NextStepDetail.setNestedStep("steps")
+        }
+        else if (NextStepDetail.NestedStep === "moveIIIStep") {
+            nextStep()
+            // console.log(NextStepDetail.NestedStep, "check");
+            // NextStepDetail.setNestedStep("steps")
+            // <StepThree />
         }
         else if (NextStepDetail.NestedStep === "moveIIIIndStep") {
             nextStep()
-        }
+            // console.log(NextStepDetail.NestedStep, "check");
+            // NextStepDetail.setNestedStep("steps")
+        } 
     }, [NextStepDetail])
 
     // const { getRootProps, getRadioProps } = useRadioGroup({

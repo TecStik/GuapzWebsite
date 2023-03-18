@@ -16,6 +16,7 @@ export const ClickableSteps = () => {
         initialStep: 0,
     })
     const NextStepDetail = useContext(StoreContext);
+    // console.log(NextStepDetail.NextStepDetail,"NextStepDetailNextStepDetail");
     const onChange = (date, dateString) => {
         console.log(date, dateString);
     };
@@ -41,7 +42,7 @@ export const ClickableSteps = () => {
                                         </Stack>
                                     </CardBody>
                                     <VStack mt={10} >
-                                        <Button colorScheme='teal' bg="#0F4B63" w={40}><ArrowRightIcon /><ArrowRightIcon /></Button>
+                                        <Button colorScheme='teal' bg="#0F4B63" w={40} onClick={nextStep}><ArrowRightIcon /><ArrowRightIcon /></Button>
                                     </VStack>
                                 </Card>
                             </WrapItem>
@@ -80,7 +81,7 @@ export const ClickableSteps = () => {
                                         </Stack>
                                     </CardBody>
                                     <VStack mt={10} >
-                                        <Button colorScheme='teal' bg="#0F4B63" w={40}><ArrowRightIcon /><ArrowRightIcon /></Button>
+                                        <Button colorScheme='teal' bg="#0F4B63" onClick={nextStep} w={40}><ArrowRightIcon /><ArrowRightIcon /></Button>
                                     </VStack>
                                 </Card>
                             </WrapItem>
@@ -129,7 +130,7 @@ export const ClickableSteps = () => {
                                         </Wrap>
                                     </CardBody>
                                     <VStack m={5} >
-                                        <Button colorScheme='teal' bg="#0F4B63" w={40}><ArrowRightIcon /><ArrowRightIcon /></Button>
+                                        <Button colorScheme='teal' bg="#0F4B63" w={40} onClick={() => NextStepDetail.setNestedStep("moveIIIStep")}><ArrowRightIcon /><ArrowRightIcon /></Button>
                                     </VStack>
                                 </Card>
                             </WrapItem>

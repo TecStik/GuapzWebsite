@@ -45,7 +45,7 @@ const theme = extendBaseTheme({
 });
 
 function App() {
-  const [NestedStep, setNestedStep] = useState("");
+  const [NestedStep, setNestedStep] = useState("steps");
   const [ShowQuiz, setShowQuiz] = useState(false);
 
   return (

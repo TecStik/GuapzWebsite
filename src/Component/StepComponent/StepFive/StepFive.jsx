@@ -1,247 +1,40 @@
 import React, { useState, useContext, useEffect } from "react";
-import ChandePass from '../../../assets/ChandePass.png'
 import {
-    Box, Thead, Wrap, Image, Th, WrapItem, Td, Heading, Flex, Text, View, TableContainer, NumberInput,
-    Tbody, Input, Button, TableCaption, SimpleGrid, List, Center, ListItem, Tr, Tfoot, HStack, CardHeader, Card, CardBody, CardFooter, Container, VStack
+    Box, Button, Container, VStack
 } from "@chakra-ui/react";
-import { HamburgerIcon, ArrowRightIcon, AddIcon, WarningIcon } from "@chakra-ui/icons";
-import GuapZlogo from '../../../assets/GuapZlogo.png'
-import StoreContext from '../../../ContextAPI/ContextAPI';
-import { Divider, Table } from 'antd';
-import { Col, InputNumber, Row, Slider, Space } from 'antd';
+import SliderCom from "./SliderCom/SliderCom";
+import InvestCom from "./InvestCom/InvestCom";
 
 
 export default function StepFive() {
 
-
-    const [value, setValue] = React.useState(0)
-    const handleChange = (value) => setValue(value)
-    const NextStepDetail = useContext(StoreContext);
-
-    const [inputValue, setInputValue] = useState(1);
-    const onChange = (newValue) => {
-        setInputValue(newValue);
-    };
-
-    const columns = [
-        {
-            title: 'Name',
-            dataIndex: 'name',
-        },
-        {
-            title: 'Age',
-            dataIndex: 'age',
-        },
-        {
-            title: 'Address',
-            dataIndex: 'address',
-        },
-    ];
-    const data = [
-        {
-            key: '1',
-            name: 'John Brown',
-            age: 32,
-            address: 'New York No. 1 Lake Park',
-        },
-        {
-            key: '2',
-            name: 'Jim Green',
-            age: 42,
-            address: 'London No. 1 Lake Park',
-        },
-        {
-            key: '3',
-            name: 'Joe Black',
-            age: 32,
-            address: 'Sydney No. 1 Lake Park',
-        },
-    ];
-
+    const [isLoading, setIsLoading] = useState(false)
+    const [isComponent, setisComponent] = useState("Adjust ment")
+    const buttonHandler = () => {
+        if (isLoading === false) {
+            console.log(isLoading, isComponent) // is false 
+            setisComponent("Finsh")
+            setIsLoading(true)
+        } else {
+            // setIsLoading(false)
+            // setisComponent("Adjust ment")
+            console.log(isLoading, isComponent) // is false 
+            if (isComponent === "Finsh") {
+                alert("Beast of luck")
+            }
+        }
+    }
+    // useEffect(() => {
+    //     isComponent ? console.log(isLoading) : setisComponent("Finst")
+    // }, [isLoading])
     return (
 
         <Container maxW="container" p='10' rounded='lg'>
-            <Box boxShadow="2xl" rounded="md" padding='5%' backgroundColor='#A7B3C2' justifyItems="center"  alignItems="center">
-                {/* <Flex justifyContent="center" alignItems="center">
-                    <Wrap spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'  >
-                        <Box bg="#CFD9E8" rounded="2xl">
-                            <Card>
-                                <CardHeader>
-                                    <Image src={GuapZlogo} w='110px' h='50%' />
-                                </CardHeader>
-                                <CardBody p={2}>
-                                    <Table columns={columns} dataSource={data} size="middle" />
-                                </CardBody>
-                                <CardFooter p={2}>
-                                    <Box height={150} width="100%" bg="#F2F2F2" rounded="3xl" p={2}>
-                                        Chart
-                                    </Box>
-                                </CardFooter>
-                            </Card>
-                        </Box>
-                        <Box bg="#CFD9E8" maxW='md' minwidth="40%" rounded="2xl">
-                            <Card >
-                                <CardHeader textAlign="center" p={4}>
-                                    <Heading size='md' h='50%' fontSize={30} fontWeight="bold">
-                                        Investment Plan Summary</Heading>
-                                </CardHeader>
-                                <CardBody p={2}>
-                                    <Box height={180} bg="#F2F2F2" rounded="3xl" p={3}>
-                                        <Text>your preferred monthly contribution of USD is insufficient to achieve your target goal, You shold either:</Text>
-                                        <List spacing={3} p={4}>
-
-                                            <ul>
-                                                <li>Increase your monthly contribution</li>
-                                                <li> Defer your plan</li>
-                                                <li>Opt of a lesser targeted amount</li>
-                                            </ul>
-                                        </List>
-                                    </Box>
-                                </CardBody>
-                                <CardFooter justifyContent="flex-end" m={5} pt={14}>
-                                    <Button>Adjust ment </Button>
-                                </CardFooter>
-                            </Card>
-                        </Box>
-                    </Wrap>
-                </Flex> */}
-                <Flex justifyContent="center" alignItems="center">
-                    <Wrap spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'  >
-                        <Box bg="#CFD9E8" rounded="2xl">
-                            <Card>
-                                <CardHeader>
-                                    <Image src={GuapZlogo} w='110px' h='50%' />
-                                </CardHeader>
-                                <CardBody p={2} >
-                                    <Table columns={columns} dataSource={data} size="middle" />
-                                </CardBody>
-                                <CardFooter p={2}>
-                                    <Box height={150} width="100%" bg="#F2F2F2" rounded="3xl" boxShadow="2xl" p={2}>
-                                        Chart
-                                    </Box>
-                                </CardFooter>
-                            </Card>
-                        </Box>
-                        <Box bg="#CFD9E8" maxW='md' rounded="2xl">
-                            <Card >
-                                <CardHeader textAlign="center" p={4}>
-                                    {/* <Heading size='md' h='50%' fontSize={30} fontWeight="bold">
-                                        Investment Plan Summary</Heading> */}
-                                </CardHeader>
-                                <CardBody p={2}>
-
-                                    <WrapItem>
-                                        <Center bg='#EDF2F7' rounded="md" p={2} boxShadow="2xl" w='310px' h='100px' m={4}>
-                                            <VStack>
-                                                <Row>
-                                                    <Text fontSize={16} fontWeight="bold">Change Periodic Contribution</Text>
-                                                    <Col span={12}>
-                                                        <Slider
-                                                            style={{ width: "100px" }}
-                                                            min={1}
-                                                            max={100}
-                                                            onChange={onChange}
-                                                            value={typeof inputValue === 'number' ? inputValue : 0}
-                                                            // tooltip={{
-                                                            //     open: true,
-                                                            // }}
-
-                                                        />
-                                                    </Col>
-                                                    <Col span={4} >
-                                                        <InputNumber
-                                                            min={1}
-                                                            max={20}
-                                                            style={{
-                                                                margin: '0 16px',
-                                                                height: "100%"
-                                                            }}
-                                                            value={inputValue}
-                                                            onChange={onChange}
-                                                        />
-
-                                                    </Col>
-                                                </Row>
-                                                <Text fontSize={16} fontWeight="bold">Rupees</Text>
-                                            </VStack>
-                                        </Center>
-                                    </WrapItem>
-                                    <WrapItem>
-                                        <Center bg='#EDF2F7' rounded="md" p={2} boxShadow="2xl" w='310px' h='100px' m={4}>
-                                            <VStack>
-                                                <Row>
-                                                    <Text fontSize={16} fontWeight="bold">Change Time Horizon</Text>
-                                                    <Col span={12}>
-                                                        <Slider
-                                                            style={{ width: "100px" }}
-                                                            min={1}
-                                                            max={100}
-                                                            onChange={onChange}
-                                                            value={typeof inputValue === 'number' ? inputValue : 0}
-                                                            // tooltip={{
-                                                            //     open: true,
-                                                            // }}
-
-                                                        />
-                                                    </Col>
-                                                    <Col span={4} >
-                                                        <InputNumber
-                                                            min={1}
-                                                            max={20}
-                                                            style={{
-                                                                margin: '0 16px',
-                                                                height: "100%"
-                                                            }}
-                                                            value={inputValue}
-                                                            onChange={onChange}
-                                                        />
-
-                                                    </Col>
-                                                </Row>
-                                                <Text fontSize={16} fontWeight="bold">Rupees</Text>
-                                            </VStack>
-                                        </Center>
-                                    </WrapItem>
-                                    <WrapItem>
-                                        <Center bg='#EDF2F7' rounded="md" p={2} boxShadow="2xl" w='310px' h='100px' m={4}>
-                                            <VStack>
-                                                <Row>
-                                                    <Text fontSize={16} fontWeight="bold">Change Target Amount</Text>
-                                                    <Col span={12}>
-                                                        <Slider style={{ width: "100px" }} min={1} max={100}
-                                                            onChange={onChange}
-                                                            value={typeof inputValue === 'number' ? inputValue : 0}
-                                                            // tooltip={{
-                                                            //     open: true,
-                                                            // }}
-                                                        />
-                                                    </Col>
-                                                    <Col span={4} >
-                                                        <InputNumber
-                                                            min={1}
-                                                            max={20}
-                                                            style={{
-                                                                margin: '0 16px',
-                                                                height: "100%"
-                                                            }}
-                                                            value={inputValue}
-                                                            onChange={onChange}
-                                                        />
-
-                                                    </Col>
-                                                </Row>
-                                                <Text fontSize={16} fontWeight="bold">Rupees</Text>
-                                            </VStack>
-                                        </Center>
-                                    </WrapItem>
-                                </CardBody>
-                                <CardFooter justifyContent="flex-end" m={5} pt={14}>
-                                    <Button>Adjust ment </Button>
-                                </CardFooter>
-                            </Card>
-                        </Box>
-                    </Wrap>
-                </Flex>
+            <Box boxShadow="2xl" rounded="md" padding='5%' backgroundColor='#A7B3C2' justifyItems="center" alignItems="center">
+                {isComponent === "Finsh" ? <SliderCom /> : <InvestCom />}
+                {/* <InvestCom /> */}
+                {/* <SliderCom /> */}
+                <VStack alignItems="flex-end" mt={10}><Button onClick={buttonHandler}>{isComponent}</Button></VStack>
             </Box>
         </Container>
     )
