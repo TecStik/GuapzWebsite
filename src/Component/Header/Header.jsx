@@ -20,6 +20,8 @@ import CardsComponent from "../CardsComponent/CardsComponent";
 import QuizComponent from "../QuizComponent/QuizComponent";
 import QuizScreen from "../QuizComponent/QuizScreen";
 import ChartDashboard from "../ChartDashboard/ChartDashboard";
+import StepFour from "../StepComponent/StepFour/StepFour";
+import StepFive from "../StepComponent/StepFive/StepFive";
 
 
 const Header = (props) => {
@@ -123,7 +125,8 @@ const Header = (props) => {
             {/* <SliderInputScreen /> */}
             {/* <CardsComponent /> */}
 
-
+{/* <StepFour /> */}
+{/* <StepFive /> */}
             {/* <QuizComponent /> */}
             {/* <QuizScreen /> */}
             {/* <ChartDashboard /> */}

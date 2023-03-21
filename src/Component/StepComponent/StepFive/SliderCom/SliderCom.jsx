@@ -61,7 +61,7 @@ export default function SliderCom() {
     return (
 
         <Container maxW="container" p='10' rounded='lg'>
-            <Box boxShadow="2xl" rounded="md" padding='5%' backgroundColor='#A7B3C2' justifyItems="center" alignItems="center">
+            <Box boxShadow="2xl" rounded="md" padding='5%' backgroundColor='#EDF2F7' justifyItems="center" alignItems="center">
                 <Flex justifyContent="center" alignItems="center">
                     <Wrap spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'  >
                         <Box bg="#CFD9E8" rounded="2xl">
@@ -70,10 +70,37 @@ export default function SliderCom() {
                                     <Image src={GuapZlogo} w='110px' h='50%' />
                                 </CardHeader>
                                 <CardBody p={2} >
-                                    <Table columns={columns} dataSource={data} size="middle" />
+                                    <Card backgroundColor="#EDF2F7" borderRadius={20} boxShadow='xl'
+                                        direction={{ base: 'column', sm: 'row' }}
+                                        p={3}
+                                    >
+                                        {/* <VStack> */}
+
+                                        <Wrap p={2} borderRadius="2xl" >
+                                            <Box>
+                                                <Text textAlign="center" p={2} fontSize={22} bg="#CFD9E8" fontWeight="bold">Target Amount</Text>
+                                                <Text textAlign="center" fontSize={22} >USD</Text>
+                                            </Box>
+                                        </Wrap>
+
+                                        <Wrap p={2}>
+                                            <Box>
+                                                <Text textAlign="center" p={2} fontSize={22} bg="#CFD9E8" fontWeight="bold">Monthly payment</Text>
+                                                <Text textAlign="center" fontSize={22} >USD</Text>
+                                            </Box>
+                                        </Wrap>
+
+                                        <Wrap p={2} borderRadius="2xl" >
+                                            <Box>
+                                                <Text textAlign="center" p={2} bg="#CFD9E8" fontSize={22} fontWeight="bold">Time Period</Text>
+                                                <Text textAlign="center" fontSize={22} >XX Month</Text>
+                                            </Box>
+                                        </Wrap>
+                                        {/* </VStack> */}
+                                    </Card>
                                 </CardBody>
-                                <CardFooter p={2}>
-                                    <Box height={150} width="100%" bg="#F2F2F2" rounded="3xl" boxShadow="2xl" p={2}>
+                                <CardFooter p={2}mt={4}>
+                                    <Box height={300} width="100%" bg="#EDF2F7" rounded="3xl" boxShadow="2xl" p={2}>
                                         Chart
                                     </Box>
                                 </CardFooter>
@@ -198,8 +225,8 @@ export default function SliderCom() {
                             </Card>
                         </Box>
                     </Wrap>
-                </Flex>
-            </Box>
-        </Container>
+                </Flex >
+            </Box >
+        </Container >
     )
 }

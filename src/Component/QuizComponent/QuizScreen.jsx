@@ -27,8 +27,7 @@ export default function QuizScreen() {
     const handleChange = (value) => setValue(value)
     
     useEffect(() => {
-        console.log(ShowQuizDetail.ShowQuiz, "========>")
-
+        // console.log(ShowQuizDetail.ShowQuiz, "========>")
     }, [ShowQuizDetail])
 
     function HandleConform() {

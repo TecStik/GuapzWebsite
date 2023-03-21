@@ -70,7 +70,7 @@ export default function Question({ question, totalQuestions, currentQuestion, se
 
                                     {question.Options.map((options, i) => {
 
-                                        console.log(options, "raza");
+                                        // console.log(options, "raza");
                                         return (
                                             <Button
                                                 key={i}
@@ -89,6 +89,15 @@ export default function Question({ question, totalQuestions, currentQuestion, se
                                                 // maxW='20px'
                                                 alignItems="center"
                                                 justifyContent="center"
+                                                _checked={{
+                                                    bg: 'teal.600',
+                                                    color: 'white',
+                                                    borderColor: 'teal.600',
+                                                }}
+                                                _focus={{
+                                                    boxShadow: 'outline',
+                                                    background: "teal.600"
+                                                }}
 
                                             >
                                                 {options.Quizlable}

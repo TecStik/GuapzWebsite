@@ -23,18 +23,18 @@ export const CardsComponent = () => {
         if (NextStepDetail.NestedStep === "moveIIndStep") {
             nextStep()
             // console.log(NextStepDetail.NestedStep, "check");
-            // NextStepDetail.setNestedStep("steps")
+            NextStepDetail.setNestedStep("steps")
         }
         else if (NextStepDetail.NestedStep === "moveIIIStep") {
             nextStep()
             // console.log(NextStepDetail.NestedStep, "check");
-            // NextStepDetail.setNestedStep("steps")
             // <StepThree />
+            NextStepDetail.setNestedStep("steps")
         }
         else if (NextStepDetail.NestedStep === "moveIIIIndStep") {
             nextStep()
             // console.log(NextStepDetail.NestedStep, "check");
-            // NextStepDetail.setNestedStep("steps")
+            NextStepDetail.setNestedStep("steps")
         } 
     }, [NextStepDetail])
 

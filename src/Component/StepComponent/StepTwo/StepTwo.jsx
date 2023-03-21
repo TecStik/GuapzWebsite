@@ -112,20 +112,36 @@ export const ClickableSteps = () => {
                                             <Button
                                                 bg="#084877" color="whiteSmoke" borderRadius="20px" boxShadow="inset -5px -5px 12px #FFFFFF"
                                                 _hover={{ bg: "grey" }} size='lg' height='48px' minW='220px'
+                                                _focus={{
+                                                    boxShadow: 'outline',
+                                                    background: "teal.600"
+                                                }}
                                             >Monthly</Button>
                                             <Button
                                                 bg="#084877" color="whiteSmoke" borderRadius="20px" boxShadow="inset -5px -5px 12px #FFFFFF"
                                                 _hover={{ bg: "grey" }} size='lg' height='48px' minW='220px'
+                                                _focus={{
+                                                    boxShadow: 'outline',
+                                                    background: "teal.600"
+                                                }}
                                             >Quartly</Button>
                                         </Wrap>
                                         <Wrap spacing='30px' align='center' justify='center' mt={5}>
                                             <Button
                                                 bg="#084877" color="whiteSmoke" borderRadius="20px" boxShadow="inset -5px -5px 12px #FFFFFF"
                                                 _hover={{ bg: "grey" }} size='lg' height='48px' minW='220px'
+                                                _focus={{
+                                                    boxShadow: 'outline',
+                                                    background: "teal.600"
+                                                }}
                                             >Monthly</Button>
                                             <Button
                                                 bg="#084877" color="whiteSmoke" borderRadius="20px" boxShadow="inset -5px -5px 12px #FFFFFF"
                                                 _hover={{ bg: "grey" }} size='lg' height='48px' minW='220px'
+                                                _focus={{
+                                                    boxShadow: 'outline',
+                                                    background: "teal.600"
+                                                }}
                                             >Quartly</Button>
                                         </Wrap>
                                     </CardBody>

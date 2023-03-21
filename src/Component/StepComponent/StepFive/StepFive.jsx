@@ -30,7 +30,7 @@ export default function StepFive() {
     return (
 
         <Container maxW="container" p='10' rounded='lg'>
-            <Box boxShadow="2xl" rounded="md" padding='5%' backgroundColor='#A7B3C2' justifyItems="center" alignItems="center">
+            <Box boxShadow="2xl" rounded="md" padding='2%' backgroundColor='#CFD9E8' justifyItems="center" alignItems="center">
                 {isComponent === "Finsh" ? <SliderCom /> : <InvestCom />}
                 {/* <InvestCom /> */}
                 {/* <SliderCom /> */}
