@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect,useRef } from "react";
 import ChandePass from '../../../../assets/ChandePass.png'
 import {
     Box, Wrap, Image, WrapItem, Flex, Text,
@@ -13,7 +13,7 @@ import { Col, InputNumber, Row, Slider, Space } from 'antd';
 
 export default function SliderCom() {
 
-
+    
     const [value, setValue] = React.useState(0)
     const handleChange = (value) => setValue(value)
     const NextStepDetail = useContext(StoreContext);

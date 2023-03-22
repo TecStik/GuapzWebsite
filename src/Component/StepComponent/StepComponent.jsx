@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect,useRef } from "react";
 import { Step, Steps, useSteps } from "chakra-ui-steps"
 import { Flex, Container, Button, Heading } from "@chakra-ui/react";
 import { Calendar, DatePicker, theme, Alert } from 'antd';
@@ -19,21 +19,18 @@ export const CardsComponent = () => {
 
     const { nextStep, prevStep, reset, activeStep, setStep } = useSteps({ initialStep: 0, })
     const NextStepDetail = useContext(StoreContext);
+
     useEffect(() => {
         if (NextStepDetail.NestedStep === "moveIIndStep") {
             nextStep()
-            // console.log(NextStepDetail.NestedStep, "check");
             NextStepDetail.setNestedStep("steps")
         }
         else if (NextStepDetail.NestedStep === "moveIIIStep") {
             nextStep()
-            // console.log(NextStepDetail.NestedStep, "check");
-            // <StepThree />
             NextStepDetail.setNestedStep("steps")
         }
         else if (NextStepDetail.NestedStep === "moveIIIIndStep") {
             nextStep()
-            // console.log(NextStepDetail.NestedStep, "check");
             NextStepDetail.setNestedStep("steps")
         } 
     }, [NextStepDetail])

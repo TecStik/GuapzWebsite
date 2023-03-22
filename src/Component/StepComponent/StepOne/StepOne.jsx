@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext, useEffect,useRef } from "react";
 import { Heading, Box, Text, VStack, Image, Wrap, WrapItem, Container, Center, } from "@chakra-ui/react";
 import laptopIcon from "../../../assets/laptop-icon.png";
 import travelIcon from '../../../assets/travel-icon.png';
