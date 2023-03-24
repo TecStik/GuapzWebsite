@@ -27,10 +27,12 @@ import StepComponent from "./Component/StepComponent/StepComponent";
 import InvestmentPlant from "./Component/InvestmentPlant/InvestmentPlant";
 import Thematic from "./Component/Thematic/Thematic";
 
-
 import { StepsTheme as Steps } from "chakra-ui-steps";
 import QuizComponent from "./Component/QuizComponent/QuizComponent";
 import { StoreProvider } from "./ContextAPI/ContextAPI";
+import About from "./Component/Pages/About/About";
+import Home from "./Component/Pages/HomePage/Home";
+
 // import TwoCards from "../TwoCards/TwoCards";
 // import DashboardTwo from "../DashboardTwo/DashboardTwo";
 // import TwoCardOption from "../TwoCardFourOption/TwoCardFourOption";
@@ -78,23 +80,52 @@ function App() {
     // console.log("Expected FV", parseInt(fund.return), frequency.value, tHorizon, pmt, exp);
     // console.log("Required PMT", parseInt(fund.return), frequency.value, tHorizon, futValue, req);
 
-
     console.log(frequency, "frequencyfrequency");
     console.log(tHorizon, "tHorizon");
-
-  }, [frequency, tHorizon, pmt, futValue, fund])
+  }, [frequency, tHorizon, pmt, futValue, fund]);
   return (
     <ChakraBaseProvider theme={theme}>
-      <StoreProvider value={{ NestedStep, setNestedStep, ShowQuiz, setShowQuiz, goals, setGoals, step, setStep, riskScore, setRiskScore, futValue, setFutValue, tHorizon, setTHorizon, frequency, setFrequency, profitRate, setProfitRate, fund, setFund, pmt, setPmt, expVal, setExpVal, option, setOption }}>
+      <StoreProvider
+        value={{
+          NestedStep,
+          setNestedStep,
+          ShowQuiz,
+          setShowQuiz,
+          goals,
+          setGoals,
+          step,
+          setStep,
+          riskScore,
+          setRiskScore,
+          futValue,
+          setFutValue,
+          tHorizon,
+          setTHorizon,
+          frequency,
+          setFrequency,
+          profitRate,
+          setProfitRate,
+          fund,
+          setFund,
+          pmt,
+          setPmt,
+          expVal,
+          setExpVal,
+          option,
+          setOption,
+        }}
+      >
         <BrowserRouter>
           <Header />
           <Routes>
-
-            <Route path="/" element={<Dashboard />} />
+            {/* <Route path="/" element={<Dashboard />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/StepComponent" element={<StepComponent />} />
-            <Route path="/Thematic" element={<Thematic />} />
+            <Route path="/Thematic" element={<Thematic />} /> */}
 
+            {/* <About /> */}
+            <Route path="/" element={<About />} />
+            {/* <Route path="/" element={<Home />} /> */}
             {/* <Route path="/" element={<SignIn />} /> */}
             {/* <Route path="/" element={<InvestmentPlant />} /> */}
             {/* <Route path="/" element={<QuizComponent />} /> */}
