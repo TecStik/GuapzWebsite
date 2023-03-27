@@ -60,21 +60,25 @@ const Header = (props) => {
                     flexGrow={1}
                     mt={{ base: 4, md: 0 }}
                 >
-                    <Link>
+                    {/* <Link to="/">
+                        <Button variant="nav">Dashboard</Button>
+                    </Link> */}
+                    <Link to="/">
+                        <Button variant="nav">Home</Button>
+                    </Link>
+                    <Link to="/about">
                         <Button variant="nav">About us</Button>
                     </Link>
                     <Link>
                         <Button variant="nav">Princing</Button>
                     </Link>
-                    <Link to="/login">
-                        <Button variant="nav">Login</Button>
-                    </Link>
-                    <Link to="/portfolio">
+
+                    {/* <Link to="/portfolio">
                         <Button variant="nav">portfolio</Button>
-                    </Link>
-                    <Link to="/twoCards">
+                    </Link> */}
+                    {/* <Link to="/twoCards">
                         <Button variant="nav">Cards</Button>
-                    </Link>
+                    </Link> */}
 
                 </Stack>
 
@@ -86,12 +90,14 @@ const Header = (props) => {
                     <Link to="/login">
                         <Button variant="nav">Login</Button>
                     </Link>
-                    <Button
-                        variant="outline"
-                        _hover={{ bg: "teal.700", borderColor: "teal.700" }}
-                    >
-                        Get Started
-                    </Button>
+                    <Link to="/StepComponent">
+                        <Button
+                            variant="outline"
+                            _hover={{ bg: "teal.700", borderColor: "teal.700" }}
+                        >
+                            Get Started
+                        </Button>
+                    </Link>
                 </Box>
             </Flex>
             <Box h={50} bg="#f1f1f1">

@@ -8,7 +8,7 @@ import StoreContext from '../../../ContextAPI/ContextAPI';
 import ChandePass from '../../../assets/ChandePass.png'
 import { DatePicker, Space } from 'antd';
 import moment from "moment";
-const steps = [{ label: "Step 1" }, { label: "Step 2" }, { label: "Step 3" }]
+const steps = [{ label: "Step 1" }, { label: "Step 2" }, { label: "Step 3" }, { label: "Step 4" }]
 
 //  const [startDate, setStartDate] = useState(new Date());
 // let a = moment(value).format('YYYY MMMM Do')
@@ -47,7 +47,7 @@ export const ClickableSteps = () => {
 
         var diff = Math.floor(currentDate.getTime() - selectDate.getTime());
         var day = 1000 * 60 * 60 * 24;
-        var days = Math.floor(diff/day);
+        var days = Math.floor(diff / day);
         // console.log(diff,days);
         NextStepDetail.setTHorizon(days)
         // var diff = Math.floor(dateString.getTime() - a.getTime());
@@ -72,7 +72,7 @@ export const ClickableSteps = () => {
     }
     // console.log(NextStepDetail.frequency, "frequency");
     function handlethirdStep(params) {
-        // NextStepDetail.setNestedStep("moveIIIStep")
+        NextStepDetail.setNestedStep("moveIIIStep")
         NextStepDetail.setFrequency(paymentFre)
     }
 
@@ -151,7 +151,7 @@ export const ClickableSteps = () => {
                     </Box>
                 </Step>
 
-                <Step label={"Nested Login"} key={3}>
+                <Step label={"Payment Frequency"} key={3}>
                     <Box boxShadow="2xl" minHeight="70vh" rounded="md" paddingTop='10%' >
                         <Wrap spacing='30px' align='center' justify='center'>
                             <WrapItem>
@@ -204,6 +204,59 @@ export const ClickableSteps = () => {
                                                 }}
                                                 onClick={() => setpaymentFre({ label: "Annual", value: 12 })}
                                             >Annual</Button>
+                                        </Wrap>
+                                    </CardBody>
+                                    <VStack m={5} >
+                                        <Button colorScheme='teal' bg="#0F4B63" w={40} onClick={nextStep}><ArrowRightIcon /><ArrowRightIcon /></Button>
+                                    </VStack>
+                                </Card>
+                            </WrapItem>
+                            <WrapItem>
+                                <Card height={60} boxShadow='xl' h='270px' p={2}>
+                                    <Image src={Pngwing} w='220px' h='250px' />
+                                </Card>
+                            </WrapItem>
+                        </Wrap>
+                    </Box>
+                </Step>
+
+                <Step label={"Contribution"} key={4}>
+                    <Box boxShadow="2xl" minHeight="70vh" rounded="md" paddingTop='10%' >
+                        <Wrap spacing='30px' align='center' justify='center'>
+                            <WrapItem>
+                                <Card backgroundColor="white" borderRadius={20} boxShadow='xl'>
+                                    <CardHeader backgroundColor="#0F4B63" borderTopRadius={20} p={2} >
+                                        <HStack>
+                                            <Image src={customization} w='80px' h='70px' />
+                                            <Text color='gray.100' textAlign="center" fontSize={25} fontWeight="bold">
+                                                How much will you contribute?
+                                            </Text>
+                                        </HStack>
+                                    </CardHeader>
+                                    <CardBody>
+                                        <Wrap spacing='30px' align='center' justify='center' mt={5}>
+                                            <Button
+                                                bg="#084877" color="whiteSmoke" borderRadius="20px" boxShadow="inset -5px -5px 12px #FFFFFF"
+                                                _hover={{ bg: "grey" }} size='lg' height='48px' minW='220px'
+                                                _focus={{
+                                                    boxShadow: 'outline',
+                                                    background: "teal.600"
+                                                }}
+                                                onClick={() => setpaymentFre({ label: "monthly", value: 12 })}
+                                            >Initial</Button>
+                                           
+                                        </Wrap>
+                                        <Wrap spacing='30px' align='center' justify='center' mt={5}>
+                                            <Button
+                                                bg="#084877" color="whiteSmoke" borderRadius="20px" boxShadow="inset -5px -5px 12px #FFFFFF"
+                                                _hover={{ bg: "grey" }} size='lg' height='48px' minW='220px'
+                                                _focus={{
+                                                    boxShadow: 'outline',
+                                                    background: "teal.600"
+                                                }}
+                                                onClick={() => setpaymentFre({ label: "Smi annual", value: 6 })}
+                                            >Recurring</Button>
+                                            
                                         </Wrap>
                                     </CardBody>
                                     <VStack m={5} >

@@ -118,14 +118,14 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
-            {/* <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<Home/>} />
+            <Route path="/home" element={<Dashboard />} />
+            <Route path="/about" element={<About />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/StepComponent" element={<StepComponent />} />
-            <Route path="/Thematic" element={<Thematic />} /> */}
+            <Route path="/Thematic" element={<Thematic />} />
 
             {/* <About /> */}
-            <Route path="/" element={<About />} />
-            {/* <Route path="/" element={<Home />} /> */}
             {/* <Route path="/" element={<SignIn />} /> */}
             {/* <Route path="/" element={<InvestmentPlant />} /> */}
             {/* <Route path="/" element={<QuizComponent />} /> */}
