@@ -82,7 +82,7 @@ export const CardsComponent = () => {
                 {/* Step One */}
                 <Step label={"Fund Selection"} key={4}><StepFour /></Step>
                 {/* Confirm/Adjust your Plan*/}
-                <Step label={"Fund Selection"} key={4}><StepFive /></Step>
+                <Step label={"Confirm/Adjust your Plant"} key={4}><StepFive /></Step>
             </Steps>
 
             {activeStep === steps.length ? (

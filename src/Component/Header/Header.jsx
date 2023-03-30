@@ -90,7 +90,7 @@ const Header = (props) => {
                     <Link to="/login">
                         <Button variant="nav">Login</Button>
                     </Link>
-                    <Link to="/StepComponent">
+                    <Link to="/portfolio">
                         <Button
                             variant="outline"
                             _hover={{ bg: "teal.700", borderColor: "teal.700" }}

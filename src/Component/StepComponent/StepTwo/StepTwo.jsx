@@ -235,27 +235,37 @@ export const ClickableSteps = () => {
                                     </CardHeader>
                                     <CardBody>
                                         <Wrap spacing='30px' align='center' justify='center' mt={5}>
-                                            <Button
-                                                bg="#084877" color="whiteSmoke" borderRadius="20px" boxShadow="inset -5px -5px 12px #FFFFFF"
-                                                _hover={{ bg: "grey" }} size='lg' height='48px' minW='220px'
-                                                _focus={{
-                                                    boxShadow: 'outline',
-                                                    background: "teal.600"
-                                                }}
-                                                onClick={() => setpaymentFre({ label: "monthly", value: 12 })}
-                                            >Initial</Button>
+                                            <Input
+                                                bg="#CFD9E8" color="whiteSmoke" borderRadius="20px"
+                                                //  boxShadow="inset -5px -5px 12px #FFFFFF"
+                                                // _hover={{ bg: "grey" }} 
+                                                size='lg' height='48px' minW='220px'
+                                                // _focus={{
+                                                //     boxShadow: 'outline',
+                                                //     background: "teal.600"
+                                                // }}
+                                                textColor="white"
+                                                // onClick={() => setpaymentFre({ label: "monthly", value: 12 })}
+                                             type="text"
+                                                placeholder="Initial"
+                                            ></Input>
                                            
                                         </Wrap>
                                         <Wrap spacing='30px' align='center' justify='center' mt={5}>
-                                            <Button
-                                                bg="#084877" color="whiteSmoke" borderRadius="20px" boxShadow="inset -5px -5px 12px #FFFFFF"
-                                                _hover={{ bg: "grey" }} size='lg' height='48px' minW='220px'
-                                                _focus={{
-                                                    boxShadow: 'outline',
-                                                    background: "teal.600"
-                                                }}
-                                                onClick={() => setpaymentFre({ label: "Smi annual", value: 6 })}
-                                            >Recurring</Button>
+                                            <Input
+                                                bg="#CFD9E8" color="whiteSmoke" borderRadius="20px"
+                                                //  boxShadow="inset -5px -5px 12px #FFFFFF"
+                                                // _hover={{ bg: "grey" }} 
+                                                size='lg' height='48px' minW='220px'
+                                                textColor="white"
+                                                // _focus={{
+                                                //     boxShadow: 'outline',
+                                                //     background: "teal.600"
+                                                // }}
+                                                // onClick={() => setpaymentFre({ label: "Smi annual", value: 6 })}
+                                                type="text"
+                                                placeholder="Recurring"
+                                            ></Input>
                                             
                                         </Wrap>
                                     </CardBody>
