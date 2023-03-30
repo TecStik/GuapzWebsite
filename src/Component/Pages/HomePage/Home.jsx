@@ -117,8 +117,7 @@ const Home = () => {
                 textAlign="center"
                 justifyContent="center"
             >
-                <Link to="/StepComponent">
-
+                <Link to="/portfolio">
                     <Button bg="#BED1F9" textColor="#2B468B">Get Started!</Button>
                 </Link>
             </Flex>
