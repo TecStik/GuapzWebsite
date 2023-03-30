@@ -1,19 +1,5 @@
 import React from "react";
-import {
-    Box,
-    Stack,
-    Heading,
-    Flex,
-    Text,
-    Button,
-    useDisclosure,
-    Image,
-    HStack,
-    CardHeader,
-    Card,
-    CardBody,
-    CardFooter
-} from "@chakra-ui/react";
+import { Box, Stack, Heading, Flex, Text, Button, useDisclosure, Image, HStack, CardHeader, Card, CardBody, CardFooter } from "@chakra-ui/react";
 import { HamburgerIcon, PhoneIcon, AddIcon, WarningIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import GuapZlogo from '../../assets/GuapZlogo.png'
@@ -25,16 +11,17 @@ import TwoCards from "../TwoCards/TwoCards";
 import DashboardTwo from "../DashboardTwo/DashboardTwo";
 import TwoCardOption from "../TwoCardFourOption/TwoCardFourOption";
 import TwoCardTwoOption from "../TwoCardTwoOption/TwoCardTwoOption";
-import WebFourCards from "../WebFourCards/WebFourCards";
+import WebFourCards from "../Thematic/Thematic";
 import TwoCardDesOption from "../TwoCardDesOption/TwoCardDesOption";
 import OneCardDesOption from "../OneCardDesOption/OneCardDesOption";
 import SliderInputScreen from "../SliderInputScreen/SliderInputScreen";
 import StepComponent from "../StepComponent/StepComponent";
 import CardsComponent from "../CardsComponent/CardsComponent";
 import QuizComponent from "../QuizComponent/QuizComponent";
-import QuizUI from "../QuizComponent/QuizUI";
 import QuizScreen from "../QuizComponent/QuizScreen";
 import ChartDashboard from "../ChartDashboard/ChartDashboard";
+import StepFour from "../StepComponent/StepFour/StepFour";
+import StepFive from "../StepComponent/StepFive/StepFive";
 
 
 const Header = (props) => {
@@ -73,21 +60,25 @@ const Header = (props) => {
                     flexGrow={1}
                     mt={{ base: 4, md: 0 }}
                 >
-                    <Link>
+                    {/* <Link to="/">
+                        <Button variant="nav">Dashboard</Button>
+                    </Link> */}
+                    <Link to="/">
+                        <Button variant="nav">Home</Button>
+                    </Link>
+                    <Link to="/about">
                         <Button variant="nav">About us</Button>
                     </Link>
                     <Link>
                         <Button variant="nav">Princing</Button>
                     </Link>
-                    <Link to="/login">
-                        <Button variant="nav">Login</Button>
-                    </Link>
-                    <Link to="/portfolio">
+
+                    {/* <Link to="/portfolio">
                         <Button variant="nav">portfolio</Button>
-                    </Link>
-                    <Link to="/twoCards">
+                    </Link> */}
+                    {/* <Link to="/twoCards">
                         <Button variant="nav">Cards</Button>
-                    </Link>
+                    </Link> */}
 
                 </Stack>
 
@@ -99,12 +90,14 @@ const Header = (props) => {
                     <Link to="/login">
                         <Button variant="nav">Login</Button>
                     </Link>
-                    <Button
-                        variant="outline"
-                        _hover={{ bg: "teal.700", borderColor: "teal.700" }}
-                    >
-                        Get Started
-                    </Button>
+                    <Link to="/StepComponent">
+                        <Button
+                            variant="outline"
+                            _hover={{ bg: "teal.700", borderColor: "teal.700" }}
+                        >
+                            Get Started
+                        </Button>
+                    </Link>
                 </Box>
             </Flex>
             <Box h={50} bg="#f1f1f1">
@@ -127,19 +120,23 @@ const Header = (props) => {
             {/* <Login /> */}
             {/* <Dashboard /> */}
             {/* <Portfolio /> */}
+
             {/* <WebFourCards /> */}
+
             {/* <DashboardTwo /> */}
             {/* <TwoCardOption /> */}
             {/* <TwoCardTwoOption /> */}
             {/* <TwoCardDesOption /> */}
             {/* <OneCardDesOption /> */}
             {/* <TwoCards /> */}
-            <StepComponent />
+            {/* <StepComponent /> */}
             {/* <SliderInputScreen /> */}
             {/* <CardsComponent /> */}
+
+            {/* <StepFour /> */}
+            {/* <StepFive /> */}
             {/* <QuizComponent /> */}
             {/* <QuizScreen /> */}
-            {/* <QuizUI /> */}
             {/* <ChartDashboard /> */}
 
             {/* <StepOne /> */}
