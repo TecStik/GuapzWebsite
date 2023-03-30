@@ -14,7 +14,29 @@ export default function Question({ question, totalQuestions, currentQuestion, se
     console.log(selectOption, "selectOption");
     // console.log(setAnswer);
 
+<<<<<<< Updated upstream
     function gotoQuestionNext() {
+=======
+
+
+
+
+    let riskresponse = {
+        QId: question.QId,
+        weightage: question.Weightage,
+        option: selectOption
+
+    }
+    console.log("Selected Option",selectOption);
+
+    function gotoQuestionNext() {
+console.log("Selected Option",selectOption);
+        let tempRisk = riskProfile;
+        tempRisk.push(riskresponse);
+        setRiskProfile(tempRisk);
+
+        console.log(riskProfile, "set OPTION AND WEIGHT");
+>>>>>>> Stashed changes
 
         flushSync(() => {
             setAnswer(selectOption)
@@ -70,6 +92,7 @@ export default function Question({ question, totalQuestions, currentQuestion, se
 
                                     {question.Options.map((options, i) => {
 
+<<<<<<< Updated upstream
                                         // console.log(options, "raza");
                                         return (
                                             <Button
@@ -98,6 +121,36 @@ export default function Question({ question, totalQuestions, currentQuestion, se
                                                     boxShadow: 'outline',
                                                     background: "teal.600"
                                                 }}
+=======
+                                            // console.log(options, "raza");
+                                            return (
+                                                <Button
+                                                    key={i}
+                                                    onClick={() => setSelectOption(options)}
+                                                    bg="#084877"
+                                                    color="whiteSmoke"
+                                                    border='none'
+                                                    borderRadius="20px"
+                                                    boxShadow="inset -5px -5px 12px #FFFFFF"
+                                                    fontSize="lg"
+                                                    _hover={{ bg: "grey" }}
+                                                    size='lg'
+                                                    height='48px'
+                                                    minW='220px'
+                                                    // p={5}
+                                                    // maxW='20px'
+                                                    alignItems="center"
+                                                    justifyContent="center"
+                                                    _checked={{
+                                                        bg: 'teal.600',
+                                                        color: 'white',
+                                                        borderColor: 'teal.600',
+                                                    }}
+                                                    _focus={{
+                                                        boxShadow: 'outline',
+                                                        background: "teal.600"
+                                                    }}
+>>>>>>> Stashed changes
 
                                             >
                                                 {options.Quizlable}
