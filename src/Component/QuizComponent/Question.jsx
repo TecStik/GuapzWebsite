@@ -26,6 +26,12 @@ export default function Question({ question, totalQuestions, currentQuestion, se
 
     }
 
+    const handleNext=async()=>{
+        console.log("In handleNext",riskresponse);
+        gotoQuestionNext();
+    }
+
+
     function gotoQuestionNext() {
 
         let tempRisk = riskProfile;
@@ -59,6 +65,7 @@ export default function Question({ question, totalQuestions, currentQuestion, se
             let element = profile[i];
             score = score + (parseFloat(element.option.QuizValue) * parseFloat(element.weightage) / 100);
             console.log("RiskScore", score);
+            return score;
         }
     }
 
@@ -152,7 +159,7 @@ export default function Question({ question, totalQuestions, currentQuestion, se
                                 <CardFooter justifyContent="space-evenly">
                                     <Wrap mb={5}>
                                         <Button colorScheme='teal' w={40} onClick={gotoPrevQuestion}> <ArrowLeftIcon />  <ArrowLeftIcon /></Button>
-                                        <Button colorScheme='teal' w={40} onClick={gotoQuestionNext}> <ArrowRightIcon />  <ArrowRightIcon /></Button>
+                                        <Button colorScheme='teal' w={40} onClick={handleNext}> <ArrowRightIcon />  <ArrowRightIcon /></Button>
                                     </Wrap>
                                 </CardFooter>
                             </Card>
