@@ -116,7 +116,7 @@ export default function Question({ question, totalQuestions, currentQuestion, se
                                             return (
                                                 <Button
                                                     key={i}
-                                                    onClick={() => setSelectOption(i)}
+                                                    onClick={() => setSelectOption(options)}
                                                     bg="#084877"
                                                     color="whiteSmoke"
                                                     border='none'
