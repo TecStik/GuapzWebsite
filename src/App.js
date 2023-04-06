@@ -50,6 +50,7 @@ const theme = extendBaseTheme({
 
 function App() {
   const [NestedStep, setNestedStep] = useState("steps");
+  const [StepChildCom, setStepChildCom] = useState("steps");
   const [ShowQuiz, setShowQuiz] = useState(false);
   const [goals, setGoals] = useState(["testing"]);
   // const [icon, setIcon] = useState({
@@ -89,6 +90,8 @@ function App() {
         value={{
           NestedStep,
           setNestedStep,
+          StepChildCom,
+          setStepChildCom,
           ShowQuiz,
           setShowQuiz,
           goals,
@@ -118,12 +121,14 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
-            <Route path="/" element={<Home/>} />
+            {/* <Route path="/" element={<Home/>} />
             <Route path="/home" element={<Dashboard />} />
             <Route path="/about" element={<About />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/StepComponent" element={<StepComponent />} />
-            <Route path="/Thematic" element={<Thematic />} />
+            <Route path="/Thematic" element={<Thematic />} /> */}
+
+            <Route path="/" element={<StepComponent />} />
 
             {/* <About /> */}
             {/* <Route path="/" element={<SignIn />} /> */}
