@@ -7,7 +7,7 @@ import StoreContext from '../../../../../ContextAPI/ContextAPI';
 
 
 
-export const ClickableSteps = () => {
+export const StepFourChild = () => {
 
 
     const NextStepDetail = useContext(StoreContext);
@@ -36,8 +36,9 @@ export const ClickableSteps = () => {
                                         bg="#CFD9E8" borderRadius="20px"
                                         size='lg' height='48px' minW='220px'
                                         textColor="#084877"
+                                        onChange={(e)=>console.log(" InitialCont",e.target.value)}
                                         type="text"
-                                        placeholder="Initial"
+                                        placeholder="your initial Contribution"
                                     ></Input>
                                 </Wrap>
                                 <Wrap spacing='30px' align='center' justify='center' mt={5}>
@@ -46,7 +47,7 @@ export const ClickableSteps = () => {
                                         size='lg' height='48px' minW='220px'
                                         textColor="#084877"
                                         type="text"
-                                        placeholder="Recurring"
+                                        placeholder="your recurring Contribution"
                                     ></Input>
                                 </Wrap>
                             </CardBody>

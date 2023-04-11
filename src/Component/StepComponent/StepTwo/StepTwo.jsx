@@ -11,6 +11,7 @@ import moment from "moment";
 import { StepOneChild } from "./StepChildCom/StepOneChild/StepOneChild";
 import { StepTwoChild } from "./StepChildCom/StepTwoChild/StepTwoChild";
 import { StepThreeChild } from "./StepChildCom/StepThreeChild/StepThreeChild";
+import { StepFourChild } from "./StepChildCom/StepFourChild/StepFourChild";
 const steps = [{ label: "Step 1" }, { label: "Step 2" }, { label: "Step 3" }, { label: "Step 4" }]
 
 
@@ -115,7 +116,8 @@ export const ClickableSteps = () => {
                 </Step>
 
                 <Step label={"Contribution"} key={4}>
-                    <Box boxShadow="2xl" minHeight="70vh" rounded="md" paddingTop='10%' >
+<StepFourChild/>
+                    {/* <Box boxShadow="2xl" minHeight="70vh" rounded="md" paddingTop='10%' >
                         <Wrap spacing='30px' align='center' justify='center'>
                             <WrapItem>
                                 <Card backgroundColor="white" borderRadius={20} boxShadow='xl'>
@@ -141,7 +143,7 @@ export const ClickableSteps = () => {
                                                 textColor="white"
                                                 // onClick={() => setpaymentFre({ label: "monthly", value: 12 })}
                                                 type="text"
-                                                placeholder="Initial"
+                                                placeholder="Initial Contribution"
                                             ></Input>
 
                                         </Wrap>
@@ -174,7 +176,7 @@ export const ClickableSteps = () => {
                                 </Card>
                             </WrapItem>
                         </Wrap>
-                    </Box>
+                    </Box> */}
                 </Step>
             </Steps>
             {/* {activeStep === steps.length ? (
