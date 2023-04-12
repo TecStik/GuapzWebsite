@@ -9,10 +9,13 @@ import StoreContext from '../../../../../ContextAPI/ContextAPI';
 
 export const StepFourChild = () => {
 
-
-    const NextStepDetail = useContext(StoreContext);
+    const [pmt, setPmt] = useState(0);
+    const [initCont, setInitCont] = useState(0);
+    const contextData = useContext(StoreContext);
     function handlethirdStep(params) {
-        NextStepDetail.setNestedStep("moveIIIStep")
+        contextData.setPmt(pmt);
+        contextData.setInitCont(initCont);
+        contextData.setNestedStep("moveIIIStep");
     }
 
 
@@ -36,7 +39,7 @@ export const StepFourChild = () => {
                                         bg="#CFD9E8" borderRadius="20px"
                                         size='lg' height='48px' minW='220px'
                                         textColor="#084877"
-                                        onChange={(e)=>console.log(" InitialCont",e.target.value)}
+                                        onChange={(e)=>setInitCont(e.target.value)}
                                         type="text"
                                         placeholder="your initial Contribution"
                                     ></Input>
@@ -47,6 +50,7 @@ export const StepFourChild = () => {
                                         size='lg' height='48px' minW='220px'
                                         textColor="#084877"
                                         type="text"
+                                        onChange={(e)=>setPmt(e.target.value)}
                                         placeholder="your recurring Contribution"
                                     ></Input>
                                 </Wrap>

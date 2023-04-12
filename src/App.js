@@ -66,7 +66,7 @@ function App() {
   const [nPer, setnPer] = useState(10);
   const [frequency, setFrequency] = useState({ label: "Month", value: 12 });
   const [pmt, setPmt] = useState(100);
-  const [InitCont, setInitCont] = useState(0);
+  const [initCont, setInitCont] = useState(0);
   const [reqPmt, setReqPmt] = useState(0);
   const [expVal, setExpVal] = useState(0);
   const [profitRate, setProfitRate] = useState(10.0);
@@ -80,10 +80,10 @@ function App() {
     // setnPer(parseInt(frequency.value * tHorizon));
     // console.log("Expected FV", parseInt(fund.return), frequency.value, tHorizon, pmt, exp);
     // console.log("Required PMT", parseInt(fund.return), frequency.value, tHorizon, futValue, req);
-
+    console.log("One of the Va;ues Chaged",frequency, tHorizon, pmt, futValue, fund,initCont);
     console.log(frequency, "frequencyfrequency");
     console.log(tHorizon, "tHorizon");
-  }, [frequency, tHorizon, pmt, futValue, fund]);
+  }, [frequency, tHorizon, pmt, futValue, fund,initCont]);
   return (
     <ChakraBaseProvider theme={theme}>
       <StoreProvider
@@ -112,6 +112,7 @@ function App() {
           setFund,
           pmt,
           setPmt,
+          setInitCont,
           expVal,
           setExpVal,
           option,
