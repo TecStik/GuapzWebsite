@@ -21,7 +21,7 @@ export const StepOneChild = () => {
         console.log("TargetValue",targetValue);
         nextStep()
         // console.log(targetValue.current.value, "khkkjhk");
-        NextStepDetail.setFutValue(targetValue.current.value)
+        NextStepDetail.setFutValue(parseFloat(targetValue.current.value))
         NextStepDetail.setStepChildCom("moveIIndStep")
     }
 
