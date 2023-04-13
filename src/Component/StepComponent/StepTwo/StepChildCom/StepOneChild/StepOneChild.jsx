@@ -18,6 +18,7 @@ export const StepOneChild = () => {
 
 
     function handlefun() {
+        console.log("TargetValue",targetValue);
         nextStep()
         // console.log(targetValue.current.value, "khkkjhk");
         NextStepDetail.setFutValue(targetValue.current.value)
