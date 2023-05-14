@@ -4,7 +4,7 @@ import {
     Box, Wrap, Image, Heading, Button, Flex, Text, VStack, HStack, Stack, CardHeader, Card, CardBody, CardFooter, Container, List
 } from "@chakra-ui/react";
 import { HamburgerIcon, ArrowRightIcon, AddIcon, WarningIcon } from "@chakra-ui/icons";
-import GuapZlogo from '../../../../assets/GuapZlogo.png'
+import GuapZlogo from '../../../../assets/GuapZlogo.png';
 import StoreContext from '../../../../ContextAPI/ContextAPI';
 import { Divider, Table } from 'antd';
 

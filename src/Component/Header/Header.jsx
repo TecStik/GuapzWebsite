@@ -22,6 +22,7 @@ import QuizScreen from "../QuizComponent/QuizScreen";
 import ChartDashboard from "../ChartDashboard/ChartDashboard";
 import StepFour from "../StepComponent/StepFour/StepFour";
 import StepFive from "../StepComponent/StepFive/StepFive";
+import Cashier from "../Cashier/Cashier";
 
 
 const Header = (props) => {
@@ -137,6 +138,8 @@ const Header = (props) => {
             {/* <StepFive /> */}
             {/* <QuizComponent /> */}
             {/* <QuizScreen /> */}
+
+            <Cashier />
             {/* <ChartDashboard /> */}
 
             {/* <StepOne /> */}

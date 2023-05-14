@@ -128,7 +128,7 @@ function App() {
             <Route path="/StepComponent" element={<StepComponent />} />
             <Route path="/Thematic" element={<Thematic />} /> */}
 
-            <Route path="/" element={<StepComponent />} />
+            {/* <Route path="/" element={<StepComponent />} /> */}
 
             {/* <About /> */}
             {/* <Route path="/" element={<SignIn />} /> */}
