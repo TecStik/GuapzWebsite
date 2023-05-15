@@ -1,11 +1,12 @@
 import React from 'react';
 import {
-    Box, Wrap, Image, Heading, Button, Flex, Text, VStack, Divider, HStack, Stack, CardHeader, Card, CardBody, CardFooter, Container, List, Center
+    Box, Wrap, Image, Heading, Button, GridItem, Grid, WrapItem, Flex, Text, VStack, Divider, HStack, Stack, CardHeader, Card, CardBody, CardFooter, Container, List, Center
 } from "@chakra-ui/react";
 import GuapZlogo from '../../assets/GuapZlogo.png';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import { Pie } from 'react-chartjs-2';
+import './Cashier.css';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -64,261 +65,134 @@ export default function () {
         ],
     };
     return (
-        <Container maxW="container" p='10' rounded='lg'>
+        <Container maxW="container" p='10' rounded='lg' bg="#8EB9BB">
             <Box boxShadow="2xl" rounded="md" padding='5%' backgroundColor='#EDF2F7' justifyItems="center" alignItems="center">
-                <Flex justifyContent="center" alignItems="center">
-                    <Wrap spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))' bg="#CFD9E8" rounded="2xl" >
-                        <Card backgroundColor="#EDF2F7" borderRadius={20} boxShadow='xl'
-                            direction={{ base: 'column', sm: 'column' }}
-                            p={3}
-                        >
-                            <VStack>
-                                <Wrap bg="#CFD9E8" p={2} borderRadius="2xl" width="100%">
-                                    <Box>
-                                        <Text textAlign="center" fontSize={22} fontWeight="bold">Target Amount</Text>
-                                    </Box>
-                                    <Text textAlign="center" fontSize={22} >USD</Text>
-                                </Wrap>
+                <Flex justifyContent="space-evenly" alignItems="center">
+                  
+                    <Wrap spacing='60px'>
+                        <WrapItem>
+                            <Stack w='280px' h='180px' backgroundColor="#8EB9BB" borderRadius={20}>
+                                <Text h='90px' backgroundColor="#1A7175" borderTopRadius={20} textAlign="center" p={7} fontSize={26} fontWeight="bold" color="white">
+                                    Total Client
+                                </Text>
+                                <Text h='90px' borderBottomRadius={10} textAlign="center" fontSize={35} fontWeight="bold" color="#1A7175">
+                                    10
+                                </Text>
+                            </Stack>
+                        </WrapItem>
 
-                                <Wrap>
-                                    <Box>
-                                        <Text textAlign="center" fontSize={22} fontWeight="bold">Monthly payment</Text>
-                                    </Box>
-                                    <Text textAlign="center" fontSize={22} >USD</Text>
-                                </Wrap>
+                        <WrapItem>
+                            <Stack w='280px' h='180px' backgroundColor="#8EB9BB" borderRadius={20}>
+                                <Text h='90px' backgroundColor="#1A7175" borderTopRadius={20} textAlign="center" p={7} fontSize={26} fontWeight="bold" color="white">
+                                    Total Client
+                                </Text>
+                                <Text h='90px' borderBottomRadius={10} textAlign="center" fontSize={35} fontWeight="bold" color="#1A7175">
+                                    10
+                                </Text>
+                            </Stack>
+                        </WrapItem>
 
-                                <Wrap bg="#CFD9E8" p={2} borderRadius="2xl" width="100%">
-                                    <Box>
-                                        <Text textAlign="center" fontSize={22} fontWeight="bold">Time Period</Text>
-                                    </Box>
-                                    <Text textAlign="center" fontSize={22} >XX Month</Text>
-                                </Wrap>
-                            </VStack>
-                        </Card>
-                        <Card backgroundColor="#EDF2F7" borderRadius={20} boxShadow='xl'
-                            direction={{ base: 'column', sm: 'column' }}
-                            p={3}
-                        >
-                            <VStack>
-                                <Wrap bg="#CFD9E8" p={2} borderRadius="2xl" width="100%">
-                                    <Box>
-                                        <Text textAlign="center" fontSize={22} fontWeight="bold">Target Amount</Text>
-                                    </Box>
-                                    <Text textAlign="center" fontSize={22} >USD</Text>
-                                </Wrap>
-
-                                <Wrap>
-                                    <Box>
-                                        <Text textAlign="center" fontSize={22} fontWeight="bold">Monthly payment</Text>
-                                    </Box>
-                                    <Text textAlign="center" fontSize={22} >USD</Text>
-                                </Wrap>
-
-                                <Wrap bg="#CFD9E8" p={2} borderRadius="2xl" width="100%">
-                                    <Box>
-                                        <Text textAlign="center" fontSize={22} fontWeight="bold">Time Period</Text>
-                                    </Box>
-                                    <Text textAlign="center" fontSize={22} >XX Month</Text>
-                                </Wrap>
-                            </VStack>
-                        </Card>
-                        <Card backgroundColor="#EDF2F7" borderRadius={20} boxShadow='xl'
-                            direction={{ base: 'column', sm: 'column' }}
-                            p={3}
-                        >
-                            <VStack>
-                                <Wrap bg="#CFD9E8" p={2} borderRadius="2xl" width="100%">
-                                    <Box>
-                                        <Text textAlign="center" fontSize={22} fontWeight="bold">Target Amount</Text>
-                                    </Box>
-                                    <Text textAlign="center" fontSize={22} >USD</Text>
-                                </Wrap>
-
-                                <Wrap>
-                                    <Box>
-                                        <Text textAlign="center" fontSize={22} fontWeight="bold">Monthly payment</Text>
-                                    </Box>
-                                    <Text textAlign="center" fontSize={22} >USD</Text>
-                                </Wrap>
-
-                                <Wrap bg="#CFD9E8" p={2} borderRadius="2xl" width="100%">
-                                    <Box>
-                                        <Text textAlign="center" fontSize={22} fontWeight="bold">Time Period</Text>
-                                    </Box>
-                                    <Text textAlign="center" fontSize={22} >XX Month</Text>
-                                </Wrap>
-                            </VStack>
-                        </Card>
-                        <Card backgroundColor="#EDF2F7" borderRadius={20} boxShadow='xl'
-                            direction={{ base: 'column', sm: 'column' }}
-                            p={3}
-                        >
-                            <VStack>
-                                <Wrap bg="#CFD9E8" p={2} borderRadius="2xl" width="100%">
-                                    <Box>
-                                        <Text textAlign="center" fontSize={22} fontWeight="bold">Target Amount</Text>
-                                    </Box>
-                                    <Text textAlign="center" fontSize={22} >USD</Text>
-                                </Wrap>
-
-                                <Wrap>
-                                    <Box>
-                                        <Text textAlign="center" fontSize={22} fontWeight="bold">Monthly payment</Text>
-                                    </Box>
-                                    <Text textAlign="center" fontSize={22} >USD</Text>
-                                </Wrap>
-
-                                <Wrap bg="#CFD9E8" p={2} borderRadius="2xl" width="100%">
-                                    <Box>
-                                        <Text textAlign="center" fontSize={22} fontWeight="bold">Time Period</Text>
-                                    </Box>
-                                    <Text textAlign="center" fontSize={22} >XX Month</Text>
-                                </Wrap>
-                            </VStack>
-                        </Card>
+                        <WrapItem>
+                            <Stack w='280px' h='180px' backgroundColor="#8EB9BB" borderRadius={20}>
+                                <Text h='90px' backgroundColor="#1A7175" borderTopRadius={20} textAlign="center" p={7} fontSize={26} fontWeight="bold" color="white">
+                                    Total Client
+                                </Text>
+                                <Text h='90px' borderBottomRadius={10} textAlign="center" fontSize={35} fontWeight="bold" color="#1A7175">
+                                    10
+                                </Text>
+                            </Stack>
+                        </WrapItem>
                     </Wrap>
+
                 </Flex>
+
                 <br />
                 <br />
                 <Center>
-                    <Wrap>
-                        <Box
-                            backgroundColor="#EDF2F7" borderRadius={20} boxShadow='xl'
-                            direction={{ base: 'row', sm: 'row' }}
-                            p={3}
-                        >
-                            <Text textAlign="center" fontSize={22} fontWeight="bold">Monthly payment USD : 35000$</Text>
-                        </Box>
-                    </Wrap>
+                    <Box
+                        backgroundColor="#EDF2F7" borderRadius={35} boxShadow='xl'
+                        direction={{ base: 'row', sm: 'row' }}
+                        p={3}
+                    >
+                        <Text textAlign="center" fontSize={25} fontWeight="bold" p={2} m={2}>Total Collection: 15000$</Text>
+                    </Box>
                 </Center>
+
                 <br />
                 <br />
+
                 <Flex justifyContent="center" alignItems="center">
-                    <Wrap spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))' bg="#CFD9E8" rounded="2xl" >
-                        <Card backgroundColor="#EDF2F7" borderRadius={20} boxShadow='xl'
-                            // direction={{ base: 'column', sm: 'column' }}
-                            p={3}
-                        >
-                            {/* <Wrap bg="#CFD9E8" borderRadius="2xl" width="100%"> */}
-                            <Box bg="#CFD9E8" borderRadius="2xl" w>
-                                <Text textAlign="center" fontSize={22} fontWeight="bold">Target Amount</Text>
+                    <Wrap spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))' rounded="2xl">
+
+                        <Card bg="#CFD9E8" borderRadius={20} boxShadow='xl' p={3}>
+                            <Box bg="#EDF2F7" borderRadius="2xl">
+                                <Text textAlign="center" fontSize={22} fontWeight="bold">Cheque/Cash</Text>
                                 <Doughnut data={data} />
                             </Box>
-                            {/* </Wrap> */}
                         </Card>
 
-                        <Card backgroundColor="#EDF2F7" borderRadius={20} boxShadow='xl'
-                            direction={{ base: 'column', sm: 'column' }}
-                            p={3}
-                        >
-                            {/* <Wrap bg="#CFD9E8" borderRadius="2xl" width="100%"> */}
-                            <Box bg="#CFD9E8" borderRadius="2xl" w>
-                                <Text textAlign="center" fontSize={22} fontWeight="bold">Target Amount</Text>
+                        <Card bg="#CFD9E8" borderRadius={20} boxShadow='xl' p={3}>
+                            <Box bg="#EDF2F7" borderRadius="2xl">
+                                <Text textAlign="center" fontSize={22} fontWeight="bold">Verify/Unverified</Text>
                                 <Pie data={data1} />
                             </Box>
-                            {/* </Wrap> */}
                         </Card>
 
-                        <Card backgroundColor="#EDF2F7" borderRadius={20} boxShadow='xl'
-                            direction={{ base: 'column', sm: 'column' }}
-                            p={3}
-                        >
-                            <VStack>
-                                <Wrap bg="#CFD9E8" p={2} borderRadius="2xl" width="100%">
-                                    <Box>
-                                        <Text textAlign="center" fontSize={22} fontWeight="bold">Name</Text>
-                                    </Box>
-                                    <Text textAlign="center" fontSize={22} fontWeight="bold">Amount</Text>
-                                </Wrap>
+                        <Card bg="#CFD9E8" borderRadius={20} boxShadow='xl' p={3} w={265}>
+                            <Box bg="#EDF2F7" borderRadius="2xl" h="100%" >
 
-                                <Wrap>
-                                    <Box >
-                                        <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22}>Rider 1</Text>
-                                        <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22}>Rider 1</Text>
-                                        <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22}>Rider 1</Text>
-                                        <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22}>Rider 1</Text>
-                                        <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22}>Rider 1</Text>
-                                        <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22}>Rider 1</Text>
+                                <VStack>
+                                    <Wrap bg="#8EB9BB" borderRadius={5} boxShadow='xl' p={2}>
+                                        <Text textAlign="center" fontSize={22} w={100}>Name</Text>
+                                        <Text textAlign="center" fontSize={22} w={100}>Amount</Text>
+                                    </Wrap>
 
-                                    </Box>
-                                    <Box>
-                                        <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22} >USD</Text>
-                                        <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22} >USD</Text>
-                                        <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22} >USD</Text>
-                                        <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22} >USD</Text>
-                                        <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22} >USD</Text>
-                                        <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22} >USD</Text>
-                                    </Box>
-                                </Wrap>
+                                    <Wrap bg="gray.200" borderRadius={5} boxShadow='xl' p={2}>
+                                        <Text textAlign="center" fontSize={22} w={100}>Cashier 1</Text>
+                                        <Text textAlign="center" fontSize={22} w={100}>2000</Text>
+                                    </Wrap>
+                                    <Wrap bg="gray.200" borderRadius={5} boxShadow='xl' p={2}>
+                                        <Text textAlign="center" fontSize={22} w={100}>Cashier 1</Text>
+                                        <Text textAlign="center" fontSize={22} w={100}>2000</Text>
+                                    </Wrap>
+                                    <Wrap bg="gray.200" borderRadius={5} boxShadow='xl' p={2}>
+                                        <Text textAlign="center" fontSize={22} w={100}>Cashier 1</Text>
+                                        <Text textAlign="center" fontSize={22} w={100}>4000</Text>
+                                    </Wrap>
+                                    <Wrap bg="gray.200" borderRadius={5} boxShadow='xl' p={2}>
+                                        <Text textAlign="center" fontSize={22} w={100}>Cashier 1</Text>
+                                        <Text textAlign="center" fontSize={22} w={100}>4000</Text>
+                                    </Wrap>
+                                    <Wrap bg="gray.200" borderRadius={5} boxShadow='xl' p={2}>
+                                        <Text textAlign="center" fontSize={22} w={100}>Cashier 1</Text>
+                                        <Text textAlign="center" fontSize={22} w={100}>5000</Text>
+                                    </Wrap>
+                                    {/* <Wrap>
+                                        <Box >
+                                            <Text textAlign="center"  bg="#CFD9E8" borderRadius={1} width="8rem" style={{ border: 'solid red' }} fontSize={22}>Rider 1</Text>
+                                            
+                                            <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22}>Cashier 1</Text>
+                                            <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22}>Rider 1</Text>
+                                            <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22}>Cashier 1</Text>
 
+                                        </Box>
+                                        <Box>
+                                            <Text textAlign="center" style={{ border: 'solid red' }} width="8rem" fontSize={22} >USD</Text>
+                                            <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22} >USD</Text>
+                                            <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22} >USD</Text>
+                                            <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22} >USD</Text>
+                                            <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22} >USD</Text>
+                                            <Text textAlign="center" style={{ border: 'solid red' }} fontSize={22} >USD</Text>
+                                        </Box>
+                                    </Wrap> */}
+                                </VStack>
 
-                            </VStack>
+                            </Box>
                         </Card>
                     </Wrap>
                 </Flex>
-
-                {/* <Card>
-                    <CardHeader>
-                        <Image src={GuapZlogo} w='110px' h='50%' />
-                    </CardHeader>
-                    <CardBody p={2}>
-
-                        <Card backgroundColor="#EDF2F7" borderRadius={20} boxShadow='xl'
-                            direction={{ base: 'column', sm: 'column' }}
-                            p={3}
-                        >
-                            <VStack>
-                                <Wrap bg="#CFD9E8" p={2} borderRadius="2xl" width="100%">
-                                    <Box>
-                                        <Text textAlign="center" fontSize={22} fontWeight="bold">Target Amount</Text>
-                                    </Box>
-                                    <Text textAlign="center" fontSize={22} >USD</Text>
-                                </Wrap>
-
-                                <Wrap>
-                                    <Box>
-                                        <Text textAlign="center" fontSize={22} fontWeight="bold">Monthly payment</Text>
-                                    </Box>
-                                    <Text textAlign="center" fontSize={22} >USD</Text>
-                                </Wrap>
-
-                                <Wrap bg="#CFD9E8" p={2} borderRadius="2xl" width="100%">
-                                    <Box>
-                                        <Text textAlign="center" fontSize={22} fontWeight="bold">Time Period</Text>
-                                    </Box>
-                                    <Text textAlign="center" fontSize={22} >XX Month</Text>
-                                </Wrap>
-                            </VStack>
-                        </Card>
-                    </CardBody>
-                    <CardFooter p={2}>
-                        <Box height={150} width="100%" boxShadow='xl' bg="#EDF2F7" rounded="3xl" p={2}>Chart</Box>
-                    </CardFooter>
-                </Card> */}
-                {/* <Box bg="#CFD9E8" maxW='md' minwidth="40%" rounded="2xl" >
-                            <Card >
-                                <CardHeader textAlign="center" p={4}>
-                                    <Heading size='md' h='50%' fontSize={30} fontWeight="bold">
-                                        Investment Plan Summary</Heading>
-                                </CardHeader>
-                                <CardBody p={2}>
-                                    <Box height={180} bg="#EDF2F7" boxShadow='xl' rounded="3xl" p={3}>
-                                        <Text>your preferred monthly contribution of USD is insufficient to achieve your target goal, You shold either:</Text>
-                                        <List spacing={3} p={4}>
-
-                                            <ul>
-                                                <li>Increase your monthly contribution</li>
-                                                <li> Defer your plan</li>
-                                                <li>Opt of a lesser targeted amount</li>
-                                            </ul>
-                                        </List>
-                                    </Box>
-                                </CardBody>
-                                <CardFooter justifyContent="flex-end" m={5} pt={14}>
-                                </CardFooter>
-                            </Card>
-                        </Box> */}
             </Box>
         </Container>
     )
 }
+
